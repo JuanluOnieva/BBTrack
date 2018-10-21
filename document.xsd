@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:element name="BBTrack">
+  <xs:complexType>
+    <xs:sequence>
+    	#Paciente
+		<xs:element name="Paciente">
+  			<xs:complexType>
+    			<xs:sequence>
+    				<xs:element name="IdPaciente" type="xs:string" use="required"/>
+					<xs:element name="NUSS" type="xs:string" use="required"/>
+			      	<xs:element name="Nombre" type="xs:string" use="required"/>
+			      	<xs:element name="Apellidos" type="xs:string" use="required"/>
+			      	#Nose si puedo poner restricciones a un atribute
+			      	<xs:element name="Sexo" type="xs:string" use="required"/>
+			      		<xs:simpleType>
+    						<xs:restriction base="xs:string">
+      							<xs:enumeration value="Masculino"/>
+      							<xs:enumeration value="Femenino"/>
+						    </xs:restriction>
+  						</xs:simpleType>
+			      	<xs:element name="Fecha_nacimiento" type="xs:date" use="required"/>
+			      	<xs:element name="Domicilio" type="xs:string" use="required"/>
+			      	<xs:element name="Localidad" type="xs:string" use="required"/>
+			      	<xs:element name="email" type="xs:string"/>
+			      	<xs:element name="telefono" type="xs:string" use="required"/>
+			      	<xs:element name="Fecha_consulta" type="xs:date" use="required"/>
+			      	<xs:element name="Es_urgente" type="xs:boolean" use="required"/>
+			      	#Historial
+    				<xs:element name="Historial">
+  						<xs:complexType>
+    						<xs:sequence>
+    							<xs:element name="IdHistorial" type="xs:string" use="required"/>
+      							<xs:element name="Fecha_primera_consulta" type="xs:string" use="required"/>
+								<xs:element name="Estado_paciente" type="xs:date" use="required"/>
+								#Informe			      	
+    							<xs:element name="Informe">
+  									<xs:complexType>
+    									<xs:sequence>
+      										<xs:element name="IdInforme" type="xs:string" use="required"/>
+											<xs:element name="Contenido" type="xs:string" use="required"/>
+											#Pruebas
+    										<xs:element name="Pruebas" maxOccurs="unbounded">
+  												<xs:complexType>
+    												<xs:sequence>
+    													<xs:element name="IdPrueba" type="xs:string" use="required"/>
+      													<xs:element name="Procedencia" type="xs:string" use="required"/>
+												      	<xs:element name="Fecha_solicitud" type="xs:date" use="required"/>
+												      	<xs:element name="Fecha_prueba" type="xs:date" use="required"/>
+												      	<xs:element name="Tecnico" type="xs:string" use="required"/>
+												      	<xs:element name="IdPaciente" type="xs:string" use="required"/>
+												      	<xs:element name="IdMedico" type="xs:string" use="required"/>
+												      	<xs:element name="IdInforme" type="xs:string" use="required"/>
+      												</xs:sequence>
+  												</xs:complexType>
+											</xs:element>
+
+    									</xs:sequence>
+  									</xs:complexType>
+								</xs:element>
+
+    						</xs:sequence>
+  						</xs:complexType>
+					</xs:element>
+     
+    			</xs:sequence>
+  			</xs:complexType>
+		</xs:element>
+		#Medico
+		<xs:element name="Medico">
+  			<xs:complexType>
+    			<xs:sequence>
+      				<xs:element name="Num_licencia" type="xs:string" use="required"/>
+	      			<xs:element name="Nombre" type="xs:string" use="required"/>
+			      	<xs:element name="Apellidos" type="xs:string" use="required"/>
+			      	<xs:element name="Sexo" type="xs:string" use="required"/>
+			      	<xs:element name="Especialidad" type="xs:string" use="required"/>
+			      	<xs:element name="Cargo" type="xs:string" use="required"/>
+    			</xs:sequence>
+  			</xs:complexType>
+		</xs:element>
+		
+
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+</xs:schema>
