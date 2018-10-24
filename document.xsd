@@ -24,8 +24,6 @@
 			      	<xs:element name="Localidad" type="xs:string" use="required"/>
 			      	<xs:element name="email" type="xs:string"/>
 			      	<xs:element name="telefono" type="xs:string" use="required"/>
-			      	<xs:element name="Fecha_consulta" type="xs:date" use="required"/>
-			      	<xs:element name="Es_urgente" type="xs:boolean" use="required"/>
 			      	#Historial
     				<xs:element name="Historial">
   						<xs:complexType>
@@ -38,7 +36,9 @@
   									<xs:complexType>
     									<xs:sequence>
       										<xs:element name="IdInforme" type="xs:string" use="required"/>
-											<xs:element name="Contenido" type="xs:string" use="required"/>
+											<xs:element name="Diagnostico" type="xs:string" use="required"/>
+											<xs:element name="Fecha_consulta" type="xs:date" use="required"/>
+			      							<xs:element name="Es_urgente" type="xs:boolean" use="required"/>
 											#Pruebas
     										<xs:element name="Pruebas" maxOccurs="unbounded">
   												<xs:complexType>

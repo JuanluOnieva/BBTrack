@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?xml-stylesheet type="text/xsl" href="/Users/juanlu/Documents/Universidad/Drive-IS/4-Bioinfo/EDAIDatos/Trabajo/BBTrack/pruebaXSL.xsl"?>
+
+<BBTrack 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="document.xsd">
+  <Paciente>
+    <idPaciente>1</idPaciente>
+    <NUSS>1</NUSS>
+    <Nombre>Juan</Nombre>
+    <Apellidos>Onieva</Apellidos>
+    <sexo>Hombre</sexo>
+    <Fecha_Nacimiento>1997-25-01</Fecha_Nacimiento>
+    <Domicilio>Cabrillana</Domicilio>
+    <Localidad>Lucena</Localidad>
+    <email>juan@uma.es</email>
+    <telefono>432234432</telefono>
+    <Historial>
+      <IdHistorial>h1</IdHistorial>
+      <Fecha_primera_consulta>2015-25-01</Fecha_primera_consulta>
+      <Estado_paciente>Bueno</Estado_paciente>
+      <Informe>
+        <IdInforme>I1</IdInforme>
+        <Diagnostico>Prueba rutinaria</Diagnostico>
+        <Fecha_consulta>2018-02-2</Fecha_consulta>
+        <Es_urgente>0</Es_urgente>
+        <IdMedico>M1</IdMedico>
+        <Pruebas>
+          <IdPrueba>p1</IdPrueba>
+          <Procedencia>medico</Procedencia>
+          <Fecha_solicitud>2018-02-2</Fecha_solicitud>
+          <Fecha_prueba>2018-02-2</Fecha_prueba>
+          <Tecnico>Miguel</Tecnico>
+        </Pruebas>
+      </Informe>
+      <Factor_de_riesgo_prenatal>
+        <Antecedentes_familiares>No</Antecedentes_familiares>
+        <Factores_psicosociales>No</Factores_psicosociales>
+        <Antecedentes_obstetricos>No</Antecedentes_obstetricos>
+        <Antecedentes_personales>No</Antecedentes_personales>
+        <Patologia_materna>No</Patologia_materna>
+        <Riesgos_específicos></Riesgos_específicos>
+        <Exposicion_a_teratogenos>No</Exposicion_a_teratogenos>
+      </Factor_de_riesgo_prenatal>
+    </Historial>
+  </Paciente>
+  <Paciente>
+    <idPaciente>2</idPaciente>
+    <NUSS>2</NUSS>
+    <Nombre>Juan2</Nombre>
+    <Apellidos>Onieva</Apellidos>
+    <sexo>Hombre</sexo>
+    <Fecha_Nacimiento>1997-25-01</Fecha_Nacimiento>
+    <Domicilio>Cabrillana</Domicilio>
+    <Localidad>Lucena</Localidad>
+    <email>juan@uma.es</email>
+    <telefono>432234432</telefono>
+    <Historial>
+      <IdHistorial>h2</IdHistorial>
+      <Fecha_primera_consulta>2015-25-01</Fecha_primera_consulta>
+      <Estado_paciente>Bueno</Estado_paciente>
+      <Informe>
+        <IdInforme>I2</IdInforme>
+        <Diagnostico>Prueba rutinaria</Diagnostico>
+        <Fecha_consulta>2018-02-2</Fecha_consulta>
+        <Es_urgente>0</Es_urgente>
+        <IdMedico>M1</IdMedico>
+        <Pruebas>
+          <IdPrueba>p2</IdPrueba>
+          <Procedencia>medico</Procedencia>
+          <Fecha_solicitud>2018-02-2</Fecha_solicitud>
+          <Fecha_prueba>2018-02-2</Fecha_prueba>
+          <Tecnico>Miguel</Tecnico>
+        </Pruebas>
+      </Informe>
+      <Factor_de_riesgo_prenatal>
+        <Antecedentes_familiares>No</Antecedentes_familiares>
+        <Factores_psicosociales>No</Factores_psicosociales>
+        <Antecedentes_obstetricos>No</Antecedentes_obstetricos>
+        <Antecedentes_personales>No</Antecedentes_personales>
+        <Patologia_materna>No</Patologia_materna>
+        <Riesgos_específicos></Riesgos_específicos>
+        <Exposicion_a_teratogenos>No</Exposicion_a_teratogenos>
+      </Factor_de_riesgo_prenatal>
+    </Historial>
+  </Paciente>
+  <Medico>
+    <Num_Licencia>M1</Num_Licencia>
+    <Nombre>Juanlu</Nombre>
+    <Apellidos>Zafra</Apellidos>
+    <Sexo>Hombre</Sexo>
+    <Especialidad>Cabecera</Especialidad>
+    <Cargo>Jefe</Cargo>
+  </Medico>  
+</BBTrack>
