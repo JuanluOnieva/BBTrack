@@ -34,6 +34,16 @@ xsi:noNamespaceSchemaLocation="shiporder.xsd">
           <IdInforme></IdInforme>
         </Pruebas>
       </Informe>
+      <Factor_de_riesgo_prenatal>
+        <Antecedentes_familiares></Antecedentes_familiares>
+        <Factores_psicosociales></Factores_psicosociales>
+        <Antecedentes_obstetricos></Antecedentes_obstetricos>
+        <Antecedentes_personales></Antecedentes_personales>
+        <Patologia_materna></Patologia_materna>
+        <Riesgos_específicos></Riesgos_específicos>
+        <Exposicion_a_teratogenos></Exposicion_a_teratogenos>
+      </Factor_de_riesgo_prenatal>
+
     </Historial>
   </Paciente>
   <Medico>

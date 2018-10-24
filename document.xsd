@@ -58,7 +58,20 @@
     									</xs:sequence>
   									</xs:complexType>
 								</xs:element>
-
+								#Factor_de_riesgo_prenatal
+								<Factor_de_riesgo_prenatal>
+									<xs:complexType>
+    									<xs:sequence>
+      										<xs:element name="Antecedentes_familiares" type="xs:string" use="Factores_psicosociales"/>
+ 											<xs:element name="Factores_psicosociales" type="xs:string" use="optional"/>					
+											<xs:element name="Antecedentes_obstetricos" type="xs:string" use="optional"/>
+											<xs:element name="Antecedentes_personales" type="xs:string" use="optional"/>
+											<xs:element name="Patologia_materna" type="xs:string" use="optional"/>
+											<xs:element name="Riesgos_específicos" type="xs:string" use="optional"/>
+											<xs:element name="Exposicion_a_teratogenos" type="xs:string" use="optional"/>
+										</xs:sequence>
+									</xs:complexType>
+								</Factor_de_riesgo_prenatal>
     						</xs:sequence>
   						</xs:complexType>
 					</xs:element>
