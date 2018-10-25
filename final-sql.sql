@@ -501,6 +501,9 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `BBtrack`;
+
+SET FOREIGN_KEY_CHECKS=0;
+
 INSERT INTO `BBtrack`.`PACIENTE` (`idPaciente`, `Nombre`, `NUSS`, `Sexo`, `Fecha_nacimiento`, `Localidad`, `Domicilio`, `Apellidos`, `Teléfono`, `Correo_electrónico`, `Embarazada`, `FPP`) VALUES ('15815', 'Maria', 'AN-15815', 'Mujer', '1997-12-20', 'Malaga', 'C/Lucena 45', 'Lopez Perez', '724444896', 'mariaLp@bbtrack.es', 0, '');
 INSERT INTO `BBtrack`.`PACIENTE` (`idPaciente`, `Nombre`, `NUSS`, `Sexo`, `Fecha_nacimiento`, `Localidad`, `Domicilio`, `Apellidos`, `Teléfono`, `Correo_electrónico`, `Embarazada`, `FPP`) VALUES ('15854', 'Araceli', 'AN-15854', 'Mujer', '1980-12-10', 'Malaga', 'C/Julio de Tormes 46', 'Toscano Medina', '637565322', 'araceliTs@bbtrack.es', 1, '2018-12-10');
 INSERT INTO `BBtrack`.`PACIENTE` (`idPaciente`, `Nombre`, `NUSS`, `Sexo`, `Fecha_nacimiento`, `Localidad`, `Domicilio`, `Apellidos`, `Teléfono`, `Correo_electrónico`, `Embarazada`, `FPP`) VALUES ('17084', 'Celia', 'AN-17084', 'Mujer', '1990-02-12', 'Malaga', 'C/Torremolinos 47', 'Del Bosque Santaella', '761635888', 'celiaDl@bbtrack.es', 1, '2018-02-12');
@@ -644,6 +647,8 @@ USE `BBtrack`;
 INSERT INTO `BBtrack`.`FACTOR_DE_RIESGO_PRENATAL` (`Antecedentes_familiares`, `Factores_psicosociales`, `Antecedentes_obstetricos`, `Antecedentes_personales`, `Patologia_materna`, `Riesgos_específicos`, `Exposicion_a_teratogenos`, `HISTORIAL_IdHistorial`) VALUES ('H-15815-202HC-180505', '', '', '', '', '', '', '');
 INSERT INTO `BBtrack`.`FACTOR_DE_RIESGO_PRENATAL` (`Antecedentes_familiares`, `Factores_psicosociales`, `Antecedentes_obstetricos`, `Antecedentes_personales`, `Patologia_materna`, `Riesgos_específicos`, `Exposicion_a_teratogenos`, `HISTORIAL_IdHistorial`) VALUES ('H-15854-202HC-180303', NULL, '', '', '', '', '', '');
 INSERT INTO `BBtrack`.`FACTOR_DE_RIESGO_PRENATAL` (`Antecedentes_familiares`, `Factores_psicosociales`, `Antecedentes_obstetricos`, `Antecedentes_personales`, `Patologia_materna`, `Riesgos_específicos`, `Exposicion_a_teratogenos`, `HISTORIAL_IdHistorial`) VALUES ('H-17084-209HCH-180707', NULL, '', '', '', '', '', '');
+
+SET FOREIGN_KEY_CHECKS=1;
 
 COMMIT;
 
