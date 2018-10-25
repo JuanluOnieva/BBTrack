@@ -20,17 +20,17 @@
 						    </xs:restriction>
   						</xs:simpleType>
 			      	<xs:element name="Fecha_nacimiento" type="xs:date" use="required"/>
-			      	<xs:element name="Domicilio" type="xs:string" use="required"/>
+			      	<xs:element name="Domicilio" type="xs:string" use="optional"/>
 			      	<xs:element name="Localidad" type="xs:string" use="required"/>
 			      	<xs:element name="email" type="xs:string"/>
-			      	<xs:element name="telefono" type="xs:string" use="required"/>
+			      	<xs:element name="telefono" type="xs:string" use="optional"/>
 			      	#Historial
     				<xs:element name="Historial">
   						<xs:complexType>
     						<xs:sequence>
     							<xs:element name="IdHistorial" type="xs:string" use="required"/>
       							<xs:element name="Fecha_primera_consulta" type="xs:string" use="required"/>
-								<xs:element name="Estado_paciente" type="xs:date" use="required"/>
+								<xs:element name="Vacunas" type="xs:date" use="required"/>
 								#Informe			      	
     							<xs:element name="Informe">
   									<xs:complexType>
