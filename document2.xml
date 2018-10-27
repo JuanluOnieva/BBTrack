@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BBTrack 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="shiporder.xsd">
+  <Paciente>
+    <idPaciente></idPaciente>
+    <NUSS></NUSS>
+    <Nombre></Nombre>
+    <Apellidos></Apellidos>
+    <sexo></sexo>
+    <Fecha_Nacimiento></Fecha_Nacimiento>
+    <Domicilio></Domicilio>
+    <Localidad></Localidad>
+    <email></email>
+    <telefono></telefono>
+    <Fecha_consulta></Fecha_consulta>
+    <Es_urgente></Es_urgente>
+    <Historial>
+      <IdHistorial></IdHistorial>
+      <Fecha_primera_consulta></Fecha_primera_consulta>
+      <Estado_paciente></Estado_paciente>
+      <Informe>
+        <IdInforme></IdInforme>
+        <Contenido></Contenido>
+        <Pruebas>
+          <IdPrueba></IdPrueba>
+          <Procedencia></Procedencia>
+          <Fecha_solicitud></Fecha_solicitud>
+          <Fecha_prueba></Fecha_prueba>
+          <Tecnico></Tecnico>
+          <IdPaciente></IdPaciente>
+          <IdMedico></IdMedico>
+          <IdInforme></IdInforme>
+        </Pruebas>
+      </Informe>
+      <Factor_de_riesgo_prenatal>
+        <Antecedentes_familiares></Antecedentes_familiares>
+        <Factores_psicosociales></Factores_psicosociales>
+        <Antecedentes_obstetricos></Antecedentes_obstetricos>
+        <Antecedentes_personales></Antecedentes_personales>
+        <Patologia_materna></Patologia_materna>
+        <Riesgos_específicos></Riesgos_específicos>
+        <Exposicion_a_teratogenos></Exposicion_a_teratogenos>
+      </Factor_de_riesgo_prenatal>
+
+    </Historial>
+  </Paciente>
+  <Medico>
+    <Num_Licencia></Num_Licencia>
+    <Nombre></Nombre>
+    <Apellidos></Apellidos>
+    <Sexo></Sexo>
+    <Especialidad></Especialidad>
+    <Cargo></Cargo>
+  </Medico>  
+</BBTrack>
