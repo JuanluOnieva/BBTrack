@@ -13,8 +13,10 @@ public class App
     public static void main( String[] args ) throws IOException
     {
     	try {
-        	GenericSqlConnection con = new GenericSqlConnection("prueba.xml");
+        	SQLtoXML con = new SQLtoXML("prueba.xml");
+        	con.initXML("pruebaXSL.xsl", "document.xsd");
 	    	con.addPaciente("SELECT * FROM PACIENTE;");
+	    	con.endXML();
 	    	con.closeFW();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

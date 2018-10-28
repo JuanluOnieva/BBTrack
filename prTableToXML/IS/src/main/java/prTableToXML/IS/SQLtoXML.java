@@ -19,23 +19,35 @@ import java.util.Properties;
  * TODO Add query exceptions
  */
 
-public class GenericSqlConnection implements DBDriverInterface {
+public class SQLtoXML {
 	
 	protected Connection connection;
-	protected long time = 0;
-	protected int rowsNumber = 0;
-	protected String url;
-	protected Properties props = new Properties();
-	protected boolean moreDB = true;
 	FileWriter pw;
+	
+	public SQLtoXML(String file) throws SQLException, IOException {
+		File fichero = new File(file);
+       	pw = new FileWriter(fichero, true);
+		String connectionString = "jdbc:mysql://localhost/bbTrack?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC"; 
+		
+		connection = DriverManager.getConnection(connectionString, "root", "bbtrack123");
+
+	}
+	
+	public void initXML(String schema, String xsd) throws IOException {
+		pw.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
+		pw.write("<?xml-stylesheet type=\"text/xsl\" href=\"" + schema + "\"?>\n");
+		pw.write("<bbTrack xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:noNamespaceSchemaLocation=\"" + xsd + "\">\n");
+	}
+	
+	public void endXML() throws IOException {
+		pw.write(endLabel("bbTrack"));
+	}
 	
 	public void addPaciente(String s) throws IOException{
 		//// create a Statement
 		try (Statement stmt = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY)){	
 			////execute query
-			time = 0;
-			rowsNumber = 0;
-			long timeBefore = System.currentTimeMillis();
+
 			try (ResultSet rs = stmt.executeQuery(s)){
 			    //Generate XML from query result
 				
@@ -48,14 +60,14 @@ public class GenericSqlConnection implements DBDriverInterface {
 					xmlHistorial(rsHistorial);
 					
 					try(ResultSet rsFRP = stmt.executeQuery("SELECT f.Antecedentes_familiares, f.Factores_psicosociales, f.Antecedentes_obstetricos, f.Antecedentes_personales, f.Patologia_materna, f.Riesgos_especificos, f.Exposicion_a_teratogenos " + 
-							" FROM HISTORIAL h FACTOR_DE_RIESGO_PRENATAL f WHERE h.idPaciente="+id +" and h.idHistorial=f.idHistorial"))
+							" FROM HISTORIAL h Factor_de_riesgo_prenatal f WHERE h.idPaciente="+id +" and h.idHistorial=f.idHistorial"))
 					{xmlFRP(rsFRP);}
 					catch(SQLException e) {
 						xmlFRP(null);
 					}
 					
-					pw.write(endLabel("FACTOR_DE_RIESGO_PRENATAL"));
-					System.out.println(endLabel("FACTOR_DE_RIESGO_PRENATAL"));
+					pw.write(endLabel("Factor_de_riesgo_prenatal"));
+					System.out.println(endLabel("Factor_de_riesgo_prenatal"));
 					
 					
 
@@ -104,27 +116,8 @@ public class GenericSqlConnection implements DBDriverInterface {
 			e.getMessage();
 		}
 	}
-
-	public GenericSqlConnection(String file) throws SQLException, IOException {
-		File fichero = new File(file);
-       	pw = new FileWriter(fichero, true);
-		String connectionString = "jdbc:mysql://localhost/bbTrack?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC"; 
-		
-		connection = DriverManager.getConnection(connectionString, "root", "bbtrack123");
-
-	}
-		
-	public String getTime() {
-		return ""+time;
-	}
-
-	public String getRows() {
-		return ""+rowsNumber;
-	}
 	
-	public String toString() {
-		return connection.toString();
-	}
+
 	
 	public void xmlPaciente(ResultSet result) throws IOException, SQLException {
         HashMap<String,String> idHash = new HashMap<>();
@@ -152,6 +145,7 @@ public class GenericSqlConnection implements DBDriverInterface {
         	Localidad = result.getString("Localidad");
         	Correo_electronico = result.getString("Correo_electronico");
         	Telefono = result.getString("Telefono");
+        	Embarazada = result.getBoolean("Embarazada");
         }
         
         idHash.put("idPaciente", idPaciente);
@@ -175,6 +169,7 @@ public class GenericSqlConnection implements DBDriverInterface {
 		System.out.println(startEndLabel("Localidad", Localidad));
 		System.out.println(startEndLabel("Correo_electronico", Correo_electronico));
 		System.out.println(startEndLabel("Telefono", Telefono));
+		System.out.println(startEndLabel("Embarazada", Embarazada ? "1" : "0"));
 		
 	}
 	
@@ -227,7 +222,7 @@ public class GenericSqlConnection implements DBDriverInterface {
         }
 		}
 
-		pw.write(startLabel("FACTOR_DE_RIESGO_PRENATAL"));
+		pw.write(startLabel("Factor_de_riesgo_prenatal"));
 		pw.write(startEndLabel("Antecedentes_familiares", Antecedentes_familiares));
 		pw.write(startEndLabel("Factores_psicosociales", Factores_psicosociales));
 		pw.write(startEndLabel("Antecedentes_obstetricos", Antecedentes_obstetricos));
@@ -236,7 +231,7 @@ public class GenericSqlConnection implements DBDriverInterface {
 		pw.write(startEndLabel("Riesgos_especificos", Riesgos_especificos));
 		pw.write(startEndLabel("Exposicion_a_teratogenos", Exposicion_a_teratogenos));
 		
-		System.out.println(startLabel("FACTOR_DE_RIESGO_PRENATAL"));
+		System.out.println(startLabel("Factor_de_riesgo_prenatal"));
 		System.out.println(startEndLabel("Antecedentes_familiares", Antecedentes_familiares));
 		System.out.println(startEndLabel("Factores_psicosociales", Factores_psicosociales));
 		System.out.println(startEndLabel("Antecedentes_obstetricos", Antecedentes_obstetricos));
@@ -305,10 +300,6 @@ public class GenericSqlConnection implements DBDriverInterface {
 	    		System.out.println(startEndLabel("Sintomas", Sintomas));
 
 			}
-
-
-
-		
 	}
 	
 	public void xmlPrueba(ResultSet result) throws IOException, SQLException {
@@ -428,9 +419,7 @@ public class GenericSqlConnection implements DBDriverInterface {
         
         while(result.next()) {
             	all_id.add(result.getString("idPaciente"));
-        }
-        
-        
+        }  
         
         return(all_id);
     }

@@ -7,7 +7,7 @@ elementFormDefault="qualified">
   <xs:complexType>
     <xs:sequence>
     	#Paciente
-		<xs:element name="PACIENTE">
+		<xs:element name="Paciente">
   			<xs:complexType>
     			<xs:sequence>
     				<xs:attribute name="idPaciente" type="xs:string" use="required"/>
@@ -71,7 +71,7 @@ elementFormDefault="qualified">
   						</xs:simpleType>
             <xs:element name="Embarazada" type="xs:boolean" use="required"/>
 			      #Historial
-    				<xs:element name="HISTORIAL">
+    				<xs:element name="Historial">
   						<xs:complexType>
     						<xs:sequence>
     							<xs:attribute name="idHistorial" type="xs:string" use="required"/>
@@ -87,7 +87,7 @@ elementFormDefault="qualified">
                           <xs:length value="45"/>
                       </xs:restriction>
                     </xs:simpleType>
-                  <xs:element name="FACTOR_DE_RIESGO_PRENATAL">
+                  <xs:element name="Factor_de_riesgo_prenatal">
                     <xs:complexType>
                       <xs:sequence>
                         <xs:element name="Antecedentes_familiares" type="xs:string" use="optional"/>
@@ -100,7 +100,7 @@ elementFormDefault="qualified">
 								      </xs:sequence>
                     </xs:complexType>
                 #Informe			      	
-    							<xs:element name="INFORME">
+    							<xs:element name="Informe">
   									<xs:complexType>
     									<xs:sequence>
     										<xs:attribute name="idInforme" type="xs:string" use="required"/>
@@ -164,14 +164,14 @@ elementFormDefault="qualified">
 															      <xs:enumeration value="Especial"/>
 															    </xs:restriction>
 															  </xs:simpleType>
-                                <xs:element name="Nombre" type="string" use="required"/>
+                                <!-- <xs:element name="Nombre" type="string" use="required"/>
                                   <xs:simpleType>
                                   <xs:restriction base="xs:string">
                                     <xs:enumeration value="Analisis de sangre"/>
                                     <xs:enumeration value="Ecografia"/>
                                     <xs:enumeration value="Amniocentesis"/>
                                     <xs:enumeration value="Cariotipo"/>
-                                  </xs:restriction>
+                                  </xs:restriction> -->
                                 </xs:simpleType>
       												</xs:sequence>
   												</xs:complexType>
@@ -189,7 +189,7 @@ elementFormDefault="qualified">
   			</xs:complexType>
 		</xs:element>
 		#Medico
-		<xs:element name="MEDICO">
+		<xs:element name="Medico">
   			<xs:complexType>
     			<xs:sequence>
       				<xs:attribute name="Licencia" type="xs:string" use="required"/>

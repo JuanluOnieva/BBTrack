@@ -12,7 +12,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
       <th>Nombre</th>
       <th>Apellidos</th>
     </tr>
-    <xsl:for-each select="BBTrack/Paciente">
+    <xsl:for-each select="bbTrack/Paciente">
     <tr>
       <td><xsl:value-of select="Nombre"/></td>
       <td><xsl:value-of select="Apellidos"/></td>
