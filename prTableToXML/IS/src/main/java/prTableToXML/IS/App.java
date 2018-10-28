@@ -1,5 +1,6 @@
 package prTableToXML.IS;
 
+import java.io.FileWriter;
 import java.io.IOException;
 import java.sql.SQLException;
 
@@ -9,20 +10,20 @@ import java.sql.SQLException;
  */
 public class App 
 {
-    public static void main( String[] args )
+    public static void main( String[] args ) throws IOException
     {
-        System.out.println( "Hello World!" );
-    	GenericSqlConnection con = new MySQLConnection();
     	try {
-			con.connect("bbtrack");
-	    	con.executeQuery("SELECT compound_id FROM names where name like 'water'");
+        	GenericSqlConnection con = new GenericSqlConnection("prueba.xml");
+	    	con.addPaciente("SELECT * FROM PACIENTE;");
+	    	con.closeFW();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			System.out.println("Error al conectar!!!!!");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
+    	
     }
 }
