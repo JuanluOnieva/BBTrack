@@ -13,8 +13,8 @@ xsi:noNamespaceSchemaLocation="shiporder.xsd">
     <NUSS></NUSS>
     <Nombre></Nombre>
     <Apellidos></Apellidos>
+    <Sexo></Sexo>
     <Fecha_Nacimiento></Fecha_Nacimiento>
-    <sexo></sexo>
     <Domicilio></Domicilio>
     <Localidad></Localidad>
     <Correo_electronico></Correo_electronico>
@@ -24,10 +24,19 @@ xsi:noNamespaceSchemaLocation="shiporder.xsd">
     <Historial IdHistorial = "">
       <Fecha_primera_consulta></Fecha_primera_consulta>
       <Vacunas></Vacunas>
+      <Factor_de_riesgo_prenatal>
+        <Antecedentes_familiares></Antecedentes_familiares>
+        <Factores_psicosociales></Factores_psicosociales>
+        <Antecedentes_obstreticos></Antecedentes_obstreticos>
+        <Antecedentes_personales></Antecedentes_personales>
+        <Patologia_materna></Patologia_materna>
+        <Riesgos_especificos></Riesgos_especificos>
+        <Exposicion_a_teratogenos></Exposicion_a_teratogenos>
+      </Factor_de_riesgo_prenatal>
       #Informe
       <Informe IdInforme="">
         <Estado_paciente></Estado_paciente>
-        <Conclusion></Conclusion>
+        <Diagnostico></Diagnostico>
         #Prueba
         <Prueba IdPrueba = "">
           <Procedencia></Procedencia>
