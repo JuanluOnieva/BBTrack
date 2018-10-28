@@ -5,35 +5,22 @@
 <BBTrack 
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:noNamespaceSchemaLocation="document.xsd">
-  <Paciente>
-    <idPaciente>1</idPaciente>
-    <NUSS>1</NUSS>
-    <Nombre>Juan</Nombre>
-    <Apellidos>Onieva</Apellidos>
-    <sexo>Hombre</sexo>
+#Paciente1
+  <Paciente idPaciente = "1">
+    <NUSS>111111</NUSS>
+    <Nombre>Paloma</Nombre>
+    <Apellidos>Dominguez Sanchez</Apellidos>
+    <Sexo>Mujer</Sexo>
     <Fecha_Nacimiento>1997-25-01</Fecha_Nacimiento>
     <Domicilio>Cabrillana</Domicilio>
     <Localidad>Lucena</Localidad>
-    <email>juan@uma.es</email>
-    <telefono>432234432</telefono>
-    <Historial>
-      <IdHistorial>h1</IdHistorial>
+    <Correo_electronico>paloma@uma.es</Correo_electronico>
+    <Telefono>432234432</Telefono>
+    <Embarazada>Si</Embarazada>
+
+    <Historial IdHistorial = "h1">
       <Fecha_primera_consulta>2015-25-01</Fecha_primera_consulta>
-      <Estado_paciente>Bueno</Estado_paciente>
-      <Informe>
-        <IdInforme>I1</IdInforme>
-        <Diagnostico>Prueba rutinaria</Diagnostico>
-        <Fecha_consulta>2018-02-2</Fecha_consulta>
-        <Es_urgente>0</Es_urgente>
-        <IdMedico>M1</IdMedico>
-        <Pruebas>
-          <IdPrueba>p1</IdPrueba>
-          <Procedencia>medico</Procedencia>
-          <Fecha_solicitud>2018-02-2</Fecha_solicitud>
-          <Fecha_prueba>2018-02-2</Fecha_prueba>
-          <Tecnico>Miguel</Tecnico>
-        </Pruebas>
-      </Informe>
+      <Vacunas>Todas</Vacunas>
       <Factor_de_riesgo_prenatal>
         <Antecedentes_familiares>No</Antecedentes_familiares>
         <Factores_psicosociales>No</Factores_psicosociales>
@@ -43,37 +30,38 @@ xsi:noNamespaceSchemaLocation="document.xsd">
         <Riesgos_específicos></Riesgos_específicos>
         <Exposicion_a_teratogenos>No</Exposicion_a_teratogenos>
       </Factor_de_riesgo_prenatal>
-    </Historial>
-  </Paciente>
-  <Paciente>
-    <idPaciente>2</idPaciente>
-    <NUSS>2</NUSS>
-    <Nombre>Juan2</Nombre>
-    <Apellidos>Onieva</Apellidos>
-    <sexo>Hombre</sexo>
-    <Fecha_Nacimiento>1997-25-01</Fecha_Nacimiento>
-    <Domicilio>Cabrillana</Domicilio>
-    <Localidad>Lucena</Localidad>
-    <email>juan@uma.es</email>
-    <telefono>432234432</telefono>
-    <Historial>
-      <IdHistorial>h2</IdHistorial>
-      <Fecha_primera_consulta>2015-25-01</Fecha_primera_consulta>
-      <Estado_paciente>Bueno</Estado_paciente>
-      <Informe>
-        <IdInforme>I2</IdInforme>
+      <Informe IdInforme="I1">
+      	<Estado_paciente>Estable</Estado_paciente>
         <Diagnostico>Prueba rutinaria</Diagnostico>
-        <Fecha_consulta>2018-02-2</Fecha_consulta>
-        <Es_urgente>0</Es_urgente>
-        <IdMedico>M1</IdMedico>
-        <Pruebas>
-          <IdPrueba>p2</IdPrueba>
-          <Procedencia>medico</Procedencia>
+        <Prueba IdPrueba = "P1">
+          <Procedencia>Malaga</Procedencia>
           <Fecha_solicitud>2018-02-2</Fecha_solicitud>
           <Fecha_prueba>2018-02-2</Fecha_prueba>
           <Tecnico>Miguel</Tecnico>
-        </Pruebas>
+          <Observaciones>Ninguna</Observaciones>
+          <Id_externo></Id_externo>
+          <Tipo>Analisis de Sangre</Tipo>
+        </Prueba>
       </Informe>
+    </Historial>
+  </Paciente>
+
+ #Paciente1
+  <Paciente idPaciente = "2">
+    <NUSS>222222</NUSS>
+    <Nombre>Macarena</Nombre>
+    <Apellidos>Onieva Garcia</Apellidos>
+    <Sexo>Mujer</Sexo>
+    <Fecha_Nacimiento>1980-28-01</Fecha_Nacimiento>
+    <Domicilio>Ronda</Domicilio>
+    <Localidad>Ronda</Localidad>
+    <Correo_electronico>macarena@uma.es</Correo_electronico>
+    <Telefono>847539485</Telefono>
+    <Embarazada>Si</Embarazada>
+
+    <Historial IdHistorial = "h1">
+      <Fecha_primera_consulta>2015-25-01</Fecha_primera_consulta>
+      <Vacunas>Todas</Vacunas>
       <Factor_de_riesgo_prenatal>
         <Antecedentes_familiares>No</Antecedentes_familiares>
         <Factores_psicosociales>No</Factores_psicosociales>
@@ -83,14 +71,35 @@ xsi:noNamespaceSchemaLocation="document.xsd">
         <Riesgos_específicos></Riesgos_específicos>
         <Exposicion_a_teratogenos>No</Exposicion_a_teratogenos>
       </Factor_de_riesgo_prenatal>
+      <Informe IdInforme="I1">
+      	<Estado_paciente>Estable</Estado_paciente>
+        <Diagnostico>Prueba rutinaria</Diagnostico>
+        <Prueba IdPrueba = "P1">
+          <Procedencia>Ronda</Procedencia>
+          <Fecha_solicitud>2018-02-2</Fecha_solicitud>
+          <Fecha_prueba>2018-02-2</Fecha_prueba>
+          <Tecnico>Miguel</Tecnico>
+          <Observaciones>Ninguna</Observaciones>
+          <Id_externo></Id_externo>
+          <Tipo>Analisis de Sangre</Tipo>
+        </Prueba>
+      </Informe>
     </Historial>
   </Paciente>
-  <Medico>
-    <Num_Licencia>M1</Num_Licencia>
+
+  <Medico Licencia = "M1">
     <Nombre>Juanlu</Nombre>
     <Apellidos>Zafra</Apellidos>
     <Sexo>Hombre</Sexo>
-    <Especialidad>Cabecera</Especialidad>
+    <Especialidad>Ginecologo</Especialidad>
     <Cargo>Jefe</Cargo>
-  </Medico>  
+  </Medico> 
+  <Medico Licencia = "M2">
+    <Nombre>Yolanda</Nombre>
+    <Apellidos>Ordoñez</Apellidos>
+    <Sexo>Mujer</Sexo>
+    <Especialidad>Cabecera</Especialidad>
+    <Cargo>Jefe de servicio</Cargo>
+  </Medico> 
+
 </BBTrack>
