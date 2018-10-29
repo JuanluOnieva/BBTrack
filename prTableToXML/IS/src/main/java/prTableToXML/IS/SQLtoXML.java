@@ -109,7 +109,6 @@ public class SQLtoXML {
 
 
 				}
-				System.out.println(rs.toString());
 				
 			}
 		} catch (SQLException e) {
@@ -117,7 +116,21 @@ public class SQLtoXML {
 		}
 	}
 	
+	public void addMedico(String s) throws IOException, SQLException{
+		//// create a Statement
+		try (Statement stmt = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY)){	
+			////execute query
 
+			try (ResultSet rs = stmt.executeQuery(s)){
+			    //Generate XML from query result
+				
+				// tratar medico
+				
+		}} catch (SQLException e) {
+			e.getMessage();
+		}
+		
+	}
 	
 	public void xmlPaciente(ResultSet result) throws IOException, SQLException {
         HashMap<String,String> idHash = new HashMap<>();

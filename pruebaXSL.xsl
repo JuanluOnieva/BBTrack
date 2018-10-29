@@ -15,7 +15,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     </tr>
     <xsl:for-each select="bbTrack/Paciente">
     <tr>
-      <td><xsl:value-of select="NUSS"/></td>
+      <td><xsl:value-of select="@NUSS"/></td>
       <td><xsl:value-of select="Nombre"/></td>
       <td><xsl:value-of select="Apellidos"/></td>
     </tr>
@@ -27,7 +27,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
       <th>Nombre</th>
       <th>Apellidos</th>
     </tr>
-    <xsl:for-each select="BBTrack/Medico">
+    <xsl:for-each select="bbTrack/Medico">
     <tr>
       <td><xsl:value-of select="Nombre"/></td>
       <td><xsl:value-of select="Apellidos"/></td>

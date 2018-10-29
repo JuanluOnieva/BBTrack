@@ -16,6 +16,7 @@ public class App
         	SQLtoXML con = new SQLtoXML("prueba.xml");
         	con.initXML("pruebaXSL.xsl", "document.xsd");
 	    	con.addPaciente("SELECT * FROM PACIENTE;");
+	    	con.addPaciente("SELECT * FROM MEDICO;");
 	    	con.endXML();
 	    	con.closeFW();
 		} catch (SQLException e) {
