@@ -10,12 +10,14 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,N
 -- -----------------------------------------------------
 -- Schema bbTrack
 -- -----------------------------------------------------
-DROP DATABASE IF EXISTS `bbTrack` ;
+DROP SCHEMA IF EXISTS `bbTrack` ;
+--DROP DATABASE IF EXISTS `bbTrack` ;
 
 -- -----------------------------------------------------
 -- Schema bbTrack
 -- -----------------------------------------------------
-CREATE DATABASE IF NOT EXISTS `bbTrack` DEFAULT CHARACTER SET utf8 ;
+CREATE SCHEMA IF NOT EXISTS `bbTrack` DEFAULT CHARACTER SET utf8 ;
+--CREATE DATABASE IF NOT EXISTS `bbTrack` DEFAULT CHARACTER SET utf8 ;
 USE `bbTrack` ;
 
 -- -----------------------------------------------------
