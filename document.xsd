@@ -221,6 +221,20 @@ elementFormDefault="qualified">
     			</xs:sequence>
   			</xs:complexType>
 		</xs:element>
+    #ICD-10
+    <xs:element name="ICD10">
+      <xs:complexType>
+        <xs:sequence>
+          <xs:attribute name="Codigo" type="xs:string" use="required"/>
+          <xs:element name="Nombre" type="xs:string" use="required"/>
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:length value="255"/>
+                  </xs:restriction>
+                </xs:simpleType>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:element>  
     </xs:sequence>
   </xs:complexType>
 </xs:element>
