@@ -10,7 +10,8 @@
 <Localidad>Malaga</Localidad>
 <Correo_electronico>carmenBn@bbtrack.es</Correo_electronico>
 <Telefono>769154260</Telefono>
-<Historial><Fecha_primera_consulta></Fecha_primera_consulta>
+<Historial>
+    <Fecha_primera_consulta></Fecha_primera_consulta>
 <Vacunas></Vacunas>
 <FACTOR_DE_RIESGO_PRENATAL><Antecedentes_familiares></Antecedentes_familiares>
 <Factores_psicosociales></Factores_psicosociales>
@@ -552,5 +553,8 @@
 </Informe>
 </Historial>
 </Paciente>
+
+
+
 </bbTrack>
 

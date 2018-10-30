@@ -8,15 +8,15 @@ import java.sql.SQLException;
  * Hello world!
  *
  */
-public class App 
+public class xmlAllDatabase 
 {
     public static void main( String[] args ) throws IOException
     {
     	try {
-        	SQLtoXML con = new SQLtoXML("prueba.xml");
-        	con.initXML("pruebaXSL.xsl", "document.xsd");
-	    	con.addPaciente("SELECT * FROM PACIENTE;");
-	    	con.addPaciente("SELECT * FROM MEDICO;");
+        	SQLtoXML con = new SQLtoXML();
+        	con.initXML("pruebaXSL.xsl", "document.xsd", "bbTrack.xml");
+	    	con.addAllPaciente("SELECT * FROM PACIENTE;");
+	    	con.addAllPaciente("SELECT * FROM MEDICO;");
 	    	con.endXML();
 	    	con.closeFW();
 		} catch (SQLException e) {

@@ -24,16 +24,18 @@ public class SQLtoXML {
 	protected Connection connection;
 	FileWriter pw;
 	
-	public SQLtoXML(String file) throws SQLException, IOException {
-		File fichero = new File(file);
-       	pw = new FileWriter(fichero, true);
+	public SQLtoXML() throws SQLException, IOException {
+
 		String connectionString = "jdbc:mysql://localhost/bbTrack?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC"; 
 		
 		connection = DriverManager.getConnection(connectionString, "root", "bbtrack123");
 
 	}
 	
-	public void initXML(String schema, String xsd) throws IOException {
+	public void initXML(String schema, String xsd, String file) throws IOException {
+		File fichero = new File(file);
+       	pw = new FileWriter(fichero, true);
+       	
 		pw.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
 		pw.write("<?xml-stylesheet type=\"text/xsl\" href=\"" + schema + "\"?>\n");
 		pw.write("<bbTrack xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:noNamespaceSchemaLocation=\"" + xsd + "\">\n");
@@ -41,6 +43,21 @@ public class SQLtoXML {
 	
 	public void endXML() throws IOException {
 		pw.write(endLabel("bbTrack"));
+	}
+	
+	public ResultSet executeQuery(String s) throws IOException, SQLException{
+		// create a Statement
+		try (Statement stmt = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY)){	
+			//execute query
+			try (ResultSet rs = stmt.executeQuery(s)){
+				return(rs);
+			}
+			catch (SQLException e) {
+				e.printStackTrace();
+			} 
+		}
+		
+		return null;
 	}
 	
 	public void addPaciente(String s) throws IOException{
@@ -52,6 +69,7 @@ public class SQLtoXML {
 			    //Generate XML from query result
 				
 				List<String> all_id = getIdPaciente(rs);
+								
 				for(String id : all_id) {
 					ResultSet rsPaciente = stmt.executeQuery("SELECT p.idPaciente, p.NUSS, p.Nombre , p.Apellidos, p.Sexo, p.Fecha_Nacimiento, p.Domicilio, p.Localidad, p.Correo_electronico, p.Telefono, p.Embarazada FROM PACIENTE p WHERE idPaciente="+id);
 					xmlPaciente(rsPaciente);
@@ -116,6 +134,81 @@ public class SQLtoXML {
 		}
 	}
 	
+	
+	public void addAllPaciente(String s) throws IOException{
+		//// create a Statement
+		try (Statement stmt = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY)){	
+			////execute query
+
+			try (ResultSet rs = stmt.executeQuery(s)){
+			    //Generate XML from query result
+				
+				pw.write(identation(1)+startLabel("Pacientes\n"));
+				
+				List<String> all_id = getIdPaciente(rs);
+				for(String id : all_id) {
+					ResultSet rsPaciente = stmt.executeQuery("SELECT p.idPaciente, p.NUSS, p.Nombre , p.Apellidos, p.Sexo, p.Fecha_Nacimiento, p.Domicilio, p.Localidad, p.Correo_electronico, p.Telefono, p.Embarazada FROM PACIENTE p WHERE idPaciente="+id);
+					xmlPaciente(rsPaciente);
+
+					ResultSet rsHistorial = stmt.executeQuery("SELECT h.idHistorial, h.Fecha_primera_consulta, h.Vacunas FROM HISTORIAL h WHERE h.idPaciente="+id);
+					xmlHistorial(rsHistorial);
+					
+					try(ResultSet rsFRP = stmt.executeQuery("SELECT f.Antecedentes_familiares, f.Factores_psicosociales, f.Antecedentes_obstetricos, f.Antecedentes_personales, f.Patologia_materna, f.Riesgos_especificos, f.Exposicion_a_teratogenos " + 
+							" FROM HISTORIAL h, Factor_de_riesgo_prenatal f WHERE h.idPaciente="+id +" and h.idHistorial=f.idHistorial"))
+					{xmlFRP(rsFRP);}
+					catch(SQLException e) {						
+						xmlFRP(null);
+					}
+					
+					pw.write(endLabel("Factor_de_riesgo_prenatal\n"));
+					System.out.println(endLabel("Factor_de_riesgo_prenatal"));
+					
+					
+
+										
+					ResultSet rsInforme = stmt.executeQuery("SELECT idInforme FROM INFORME WHERE idHistorial=\"H-"+id + "\";");
+					
+					List<String> all_id_Informe = new ArrayList<String>();
+					all_id_Informe.addAll(getIdInforme(rsInforme));
+					
+					if(all_id_Informe.isEmpty()) {
+						
+						xmlInforme(null);
+						xmlPrueba(null);
+						
+						pw.write(endLabel("Informe"));
+						System.out.println(endLabel("Informe"));
+					}
+					
+					for(String idInforme : all_id_Informe) {
+												
+						rsInforme = stmt.executeQuery("SELECT i.idInforme, i.Estado_paciente, i.Diagnostico, i.idConsulta, i.Fecha_consulta, a.Es_urgente, a.Sintomas" + 
+								" FROM asiste_a a, informe i where a.idConsulta=i.idConsulta and a.Fecha_consulta=i.Fecha_consulta and i.idInforme=\"" + idInforme + "\" ;");
+						xmlInforme(rsInforme);						
+						
+						ResultSet rsPrueba = stmt.executeQuery("SELECT p.idPrueba, p.Nombre, p.Observaciones, p.Tipo FROM PRUEBA p WHERE p.idInforme=\""+idInforme+"\";");
+						
+						xmlPrueba(rsPrueba);
+						
+						 
+						pw.write(identation(4)+endLabel("Informe"));
+						System.out.println(endLabel("Informe"));
+					}
+					
+					pw.write(endLabel("Historial"));
+					System.out.println(identation(3)+endLabel("Historial"));
+					
+					pw.write(endLabel("Paciente"));
+					System.out.println(identation(2)+endLabel("Paciente"));
+				}
+				pw.write(endLabel("Pacientes"));
+				System.out.println(identation(2)+endLabel("Pacientes"));
+			}
+		} catch (SQLException e) {
+			e.getMessage();
+		}
+	}
+	
 	public void addMedico(String s) throws IOException, SQLException{
 		//// create a Statement
 		try (Statement stmt = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY)){	
@@ -163,15 +256,15 @@ public class SQLtoXML {
         
         idHash.put("idPaciente", idPaciente);
         idHash.put("NUSS", NUSS);
-		pw.write(startLabel("Paciente", idHash));
-		pw.write(startEndLabel("Nombre", Nombre));
-		pw.write(startEndLabel("Apellidos", Apellidos));
-		pw.write(startEndLabel("Sexo", Sexo));
-		pw.write(startEndLabel("Fecha_nacimiento", Fecha_nacimiento));
-		pw.write(startEndLabel("Domicilio", Domicilio));
-		pw.write(startEndLabel("Localidad", Localidad));
-		pw.write(startEndLabel("Correo_electronico", Correo_electronico));
-		pw.write(startEndLabel("Telefono", Telefono));
+		pw.write(identation(2)+startLabel("Paciente", idHash));
+		pw.write(identation(3)+startEndLabel("Nombre", Nombre));
+		pw.write(identation(3)+startEndLabel("Apellidos", Apellidos));
+		pw.write(identation(3)+startEndLabel("Sexo", Sexo));
+		pw.write(identation(3)+startEndLabel("Fecha_nacimiento", Fecha_nacimiento));
+		pw.write(identation(3)+startEndLabel("Domicilio", Domicilio));
+		pw.write(identation(3)+startEndLabel("Localidad", Localidad));
+		pw.write(identation(3)+startEndLabel("Correo_electronico", Correo_electronico));
+		pw.write(identation(3)+startEndLabel("Telefono", Telefono));
 		
 		System.out.println(startLabel("Paciente", idHash));
 		System.out.println(startEndLabel("Nombre", Nombre));
@@ -187,27 +280,35 @@ public class SQLtoXML {
 	}
 	
 	public void xmlHistorial(ResultSet result) throws IOException, SQLException {
-        HashMap<String,String> idHash = new HashMap<>();
+        
+		HashMap<String,String> idHash = new HashMap<>();
        
         String idHistorial = null;
         String Fecha_primera_consulta = null;
         String Vacunas = null;
 
         
-        if (result.getRow()==1) {
+        if (result!=null) {
+        	
+        	while(result.next()) {
+        	
         	idHistorial = result.getString("idHistorial");
+
         	Fecha_primera_consulta = result.getString("Fecha_primera_consulta");
         	Vacunas = result.getString("Vacunas");
-        	
+
             idHash.put("idHistorial", idHistorial);
 
+            pw.write(identation(3)+startLabel("Historial", idHash));
+    		System.out.println(startLabel("Historial", idHash));
+        	}
+        }else {
+
+        	pw.write(identation(3)+startLabel("Historial"));
         }
         
-		pw.write(startLabel("Historial", idHash));
-		pw.write(startEndLabel("Fecha_primera_consulta", Fecha_primera_consulta));
-		pw.write(startEndLabel("Vacunas", Vacunas));
-		
-		System.out.println(startLabel("Historial", idHash));
+		pw.write(identation(4)+startEndLabel("Fecha_primera_consulta", Fecha_primera_consulta));
+		pw.write(identation(4)+startEndLabel("Vacunas", Vacunas));
 		System.out.println(startEndLabel("Fecha_primera_consulta", Fecha_primera_consulta));
 		System.out.println(startEndLabel("Vacunas", Vacunas));
 		
@@ -235,14 +336,14 @@ public class SQLtoXML {
         }
 		}
 
-		pw.write(startLabel("Factor_de_riesgo_prenatal"));
-		pw.write(startEndLabel("Antecedentes_familiares", Antecedentes_familiares));
-		pw.write(startEndLabel("Factores_psicosociales", Factores_psicosociales));
-		pw.write(startEndLabel("Antecedentes_obstetricos", Antecedentes_obstetricos));
-		pw.write(startEndLabel("Antecedentes_personales", Antecedentes_personales));
-		pw.write(startEndLabel("Patologia_materna", Patologia_materna));
-		pw.write(startEndLabel("Riesgos_especificos", Riesgos_especificos));
-		pw.write(startEndLabel("Exposicion_a_teratogenos", Exposicion_a_teratogenos));
+		pw.write(identation(4)+startLabel("Factor_de_riesgo_prenatal"));
+		pw.write(identation(5)+startEndLabel("Antecedentes_familiares", Antecedentes_familiares));
+		pw.write(identation(5)+startEndLabel("Factores_psicosociales", Factores_psicosociales));
+		pw.write(identation(5)+startEndLabel("Antecedentes_obstetricos", Antecedentes_obstetricos));
+		pw.write(identation(5)+startEndLabel("Antecedentes_personales", Antecedentes_personales));
+		pw.write(identation(5)+startEndLabel("Patologia_materna", Patologia_materna));
+		pw.write(identation(5)+startEndLabel("Riesgos_especificos", Riesgos_especificos));
+		pw.write(identation(5)+startEndLabel("Exposicion_a_teratogenos", Exposicion_a_teratogenos));
 		
 		System.out.println(startLabel("Factor_de_riesgo_prenatal"));
 		System.out.println(startEndLabel("Antecedentes_familiares", Antecedentes_familiares));
@@ -279,13 +380,13 @@ public class SQLtoXML {
         	Sintomas = result.getString("Sintomas");
 
             idHash.put("Informe", idInforme);
-    		pw.write(startLabel("Informe", idHash));
-    		pw.write(startEndLabel("Estado_paciente", Estado_paciente));
-    		pw.write(startEndLabel("Diagnostico", Diagnostico));
-    		pw.write(startEndLabel("idConsulta", idConsulta));
-    		pw.write(startEndLabel("Fecha_consulta", Fecha_consulta));
-    		pw.write(startEndLabel("Es_urgente", Es_urgente));
-    		pw.write(startEndLabel("Sintomas", Sintomas));
+    		pw.write(identation(4)+startLabel("Informe", idHash));
+    		pw.write(identation(5)+startEndLabel("Estado_paciente", Estado_paciente));
+    		pw.write(identation(5)+startEndLabel("Diagnostico", Diagnostico));
+    		pw.write(identation(5)+startEndLabel("idConsulta", idConsulta));
+    		pw.write(identation(5)+startEndLabel("Fecha_consulta", Fecha_consulta));
+    		pw.write(identation(5)+startEndLabel("Es_urgente", Es_urgente));
+    		pw.write(identation(5)+startEndLabel("Sintomas", Sintomas));
     		
     		System.out.println(startLabel("Informe", idHash));
     		System.out.println(startEndLabel("Estado_paciente", Estado_paciente));
@@ -296,13 +397,13 @@ public class SQLtoXML {
     		System.out.println(startEndLabel("Sintomas", Sintomas));
     		
         	}}else {
-        		pw.write(startLabel("Informe", idHash));
-        		pw.write(startEndLabel("Estado_paciente", Estado_paciente));
-	    		pw.write(startEndLabel("Diagnostico", Diagnostico));
-	    		pw.write(startEndLabel("idConsulta", idConsulta));
-	    		pw.write(startEndLabel("Fecha_consulta", Fecha_consulta));
-	    		pw.write(startEndLabel("Es_urgente", Es_urgente));
-	    		pw.write(startEndLabel("Sintomas", Sintomas));
+        		pw.write(identation(4)+startLabel("Informe", idHash));
+        		pw.write(identation(5)+startEndLabel("Estado_paciente", Estado_paciente));
+	    		pw.write(identation(5)+startEndLabel("Diagnostico", Diagnostico));
+	    		pw.write(identation(5)+startEndLabel("idConsulta", idConsulta));
+	    		pw.write(identation(5)+startEndLabel("Fecha_consulta", Fecha_consulta));
+	    		pw.write(identation(5)+startEndLabel("Es_urgente", Es_urgente));
+	    		pw.write(identation(5)+startEndLabel("Sintomas", Sintomas));
 	    		
 	    		System.out.println(startLabel("Informe", idHash));
 	    		System.out.println(startEndLabel("Estado_paciente", Estado_paciente));
@@ -335,11 +436,11 @@ public class SQLtoXML {
         		Tipo = result.getString("Tipo");
 
             idHash.put("Prueba", idPrueba);
-    		pw.write(startLabel("Prueba", idHash)); 
-    		pw.write(startEndLabel("Nombre", Nombre));
-    		pw.write(startEndLabel("Observaciones", Observaciones));
-    		pw.write(startEndLabel("Tipo", Tipo));
-    		pw.write(endLabel("Prueba"));
+    		pw.write(identation(5)+startLabel("Prueba", idHash)); 
+    		pw.write(identation(6)+startEndLabel("Nombre", Nombre));
+    		pw.write(identation(6)+startEndLabel("Observaciones", Observaciones));
+    		pw.write(identation(6)+startEndLabel("Tipo", Tipo));
+    		pw.write(identation(5)+endLabel("Prueba"));
 
     		System.out.println(startLabel("Prueba", idHash));
     		System.out.println(startEndLabel("Nombre", Nombre));
@@ -354,11 +455,11 @@ public class SQLtoXML {
 		
 		
 		if (!cnt){
-    		pw.write(startLabel("Prueba", idHash)); 
-    		pw.write(startEndLabel("Nombre", Nombre));
-    		pw.write(startEndLabel("Observaciones", Observaciones));
-    		pw.write(startEndLabel("Tipo", Tipo));
-    		pw.write(endLabel("Prueba"));
+    		pw.write(identation(5)+startLabel("Prueba", idHash)); 
+    		pw.write(identation(6)+startEndLabel("Nombre", Nombre));
+    		pw.write(identation(6)+startEndLabel("Observaciones", Observaciones));
+    		pw.write(identation(6)+startEndLabel("Tipo", Tipo));
+    		pw.write(identation(5)+endLabel("Prueba"));
 
     		System.out.println(startLabel("Prueba", idHash));
     		System.out.println(startEndLabel("Nombre", Nombre));
@@ -430,15 +531,39 @@ public class SQLtoXML {
 
         List<String> all_id = new ArrayList<>();
         
+        if(result==null)
+        	System.out.println("error");
+        else {
         while(result.next()) {
             	all_id.add(result.getString("idPaciente"));
         }  
-        
+        } 
         return(all_id);
+    }
+    
+    public List<String> getIdPaciente(String s) throws SQLException, IOException {
+
+		try (Statement stmt = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY)){	
+			//execute query
+			try (ResultSet rs = stmt.executeQuery(s)){
+				return(getIdPaciente(rs));
+			}
+			catch (SQLException e) {
+				e.printStackTrace();
+			} 
+		}
+		return null;
     }
     
     public void closeFW() throws IOException {
     	pw.close();
     }
 	
+    public String identation(int num) {
+    	String result = "\t";
+    	for(int i=1; i<num; i++)
+    		result = result + "\t";
+    	return(result);
+    }
+    
 }
