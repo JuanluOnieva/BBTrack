@@ -17,6 +17,8 @@ public class xmlAllDatabase
         	con.initXML("pruebaXSL.xsl", "document.xsd", "bbTrack.xml");
 	    	con.addAllPaciente("SELECT * FROM PACIENTE;");
 	    	con.addAllMedico("SELECT * FROM MEDICO;");
+	    	con.addAllConsulta("Select * from Consulta");
+	    	con.addAllICD("Select * from ICD_10");
 	    	con.endXML();
 	    	con.closeFW();
 		} catch (SQLException e) {

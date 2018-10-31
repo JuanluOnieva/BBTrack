@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="pruebaXSL.xsl"?>
+<bbTrack xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="document.xsd">
+		<Medico>		<Medico Licencia="M-99432">
+			<Nombre>Maria</Nombre>
+			<Apellidos>Pastor Smith</Apellidos>
+			<Sexo>Mujer</Sexo>
+			<Especialidad>Urgencias</Especialidad>
+			<Consultas>
+				<idConsulta>1-32-HCH</idConsulta>
+			</Consultas>
+		</Medico>
+</bbTrack>

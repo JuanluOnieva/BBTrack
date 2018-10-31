@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="pruebaXSL.xsl"?>
+<bbTrack xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="document.xsd">
+		<Paciente idPaciente="11529">
+			<NUSS>AN-11529</NUSS>
+			<Nombre>Dorotea</Nombre>
+			<Apellidos>Buendia Calzado</Apellidos>
+			<Sexo>Mujer</Sexo>
+			<Fecha_nacimiento>1997-03-10</Fecha_nacimiento>
+			<Domicilio>C/Joaquin 60</Domicilio>
+			<Localidad>Malaga</Localidad>
+			<Correo_electronico>doroteaBe@bbtrack.es</Correo_electronico>
+			<Telefono>729626220</Telefono>
+			<Embarazada>1</Embarazada>
+				<Fecha_primera_consulta></Fecha_primera_consulta>
+				<Vacunas></Vacunas>
+				<Factor_de_riesgo_prenatal>
+					<Antecedentes_familiares></Antecedentes_familiares>
+					<Factores_psicosociales></Factores_psicosociales>
+					<Antecedentes_obstetricos></Antecedentes_obstetricos>
+					<Antecedentes_personales></Antecedentes_personales>
+					<Patologia_materna></Patologia_materna>
+					<Riesgos_especificos></Riesgos_especificos>
+					<Exposicion_a_teratogenos></Exposicion_a_teratogenos>
+				</Factor_de_riesgo_prenatal>
+				</Factor_de_riesgo_prenatal>
+				<Informe>
+					<Licencia_medico></Licencia_medico>
+					<Estado_paciente></Estado_paciente>
+					<Diagnostico></Diagnostico>
+					<idConsulta></idConsulta>
+					<Fecha_consulta></Fecha_consulta>
+					<Es_urgente></Es_urgente>
+					<Sintomas></Sintomas>
+					<Prueba>
+						<idPrueba_externo></idPrueba_externo>
+						<Nombre></Nombre>
+						<Observaciones></Observaciones>
+						<Tipo></Tipo>
+					</Prueba>
+					<ICD_10>
+						<Codigo_ICD_10></Codigo_ICD_10>
+					</ICD_10>
+				</Informe>
+			</Historial>
+		</Paciente>
+</bbTrack>

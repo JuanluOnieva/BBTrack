@@ -11,7 +11,7 @@ import java.util.List;
  * Hello world!
  *
  */
-public class xmlPaciente 
+public class xmlPacienteMedico 
 {
     public static void main( String[] args ) throws IOException
     {
@@ -25,6 +25,16 @@ public class xmlPaciente
         		con.closeFW();
 	    	
         	}
+        	
+        	List<String> allIdMedico = con.getIdMedico("SELECT * FROM MEDICO;");
+        	for(String id : allIdMedico) {
+        		con.initXML("pruebaXSL.xsl", "document.xsd", "Medicos/"+id+".xml");
+        		con.addMedico("SELECT m.Licencia, m.Nombre, m.Apellidos, m.Sexo, m.Especialidad FROM Medico m WHERE Licencia=\""+id + "\";", id);
+        		con.endXML();
+        		con.closeFW();
+	    	
+        	}
+        	
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

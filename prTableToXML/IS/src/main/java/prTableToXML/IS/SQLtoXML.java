@@ -98,18 +98,22 @@ public class SQLtoXML {
 						
 						xmlInforme(null);
 						xmlPrueba(null);
+						xmlICD(null);
 						
 						pw.write(endLabel("Informe", 4));
 					}
 					
 					for(String idInforme : all_id_Informe) {
 												
-						rsInforme = stmt.executeQuery("SELECT i.idInforme, i.Estado_paciente, i.Diagnostico, i.idConsulta, i.Fecha_consulta, a.Es_urgente, a.Sintomas" + 
+						rsInforme = stmt.executeQuery("SELECT i.idInforme, i.Licencia_medico, i.Estado_paciente, i.Diagnostico, i.idConsulta, i.Fecha_consulta, a.Es_urgente, a.Sintomas" + 
 								" FROM asiste_a a, informe i where a.idConsulta=i.idConsulta and a.Fecha_consulta=i.Fecha_consulta and i.idInforme=\"" + idInforme + "\" ;");
+						
 						xmlInforme(rsInforme);						
 						
-						ResultSet rsPrueba = stmt.executeQuery("SELECT p.idPrueba, p.Nombre, p.Observaciones, p.Tipo FROM PRUEBA p WHERE p.idInforme=\""+idInforme+"\";");
+						ResultSet rsICD10 = stmt.executeQuery("Select Codigo from informe_icd_10 where idInforme=\"" + idInforme + "\"");
+						xmlICD(rsICD10);
 						
+						ResultSet rsPrueba = stmt.executeQuery("SELECT p.idPrueba, p.idPrueba_externo, p.Nombre, p.Observaciones, p.Tipo FROM PRUEBA p WHERE p.idInforme=\""+idInforme+"\";");
 						xmlPrueba(rsPrueba);
 						
 						 
@@ -159,8 +163,8 @@ public class SQLtoXML {
 					List<String> all_id_Informe = new ArrayList<String>();
 					all_id_Informe.addAll(getIdInforme(rsInforme));
 					
-					if(all_id_Informe.isEmpty()) {
-						
+					
+					if(all_id_Informe.size()==0) {
 						xmlInforme(null);
 						xmlICD(null);
 						xmlPrueba(null);
@@ -170,13 +174,14 @@ public class SQLtoXML {
 					
 					for(String idInforme : all_id_Informe) {
 												
-						rsInforme = stmt.executeQuery("SELECT i.idInforme, i.Estado_paciente, i.Diagnostico, i.idConsulta, i.Fecha_consulta, a.Es_urgente, a.Sintomas" + 
+						rsInforme = stmt.executeQuery("SELECT i.idInforme, i.Licencia_medico, i.Estado_paciente, i.Diagnostico, i.idConsulta, i.Fecha_consulta, a.Es_urgente, a.Sintomas" + 
 								" FROM asiste_a a, informe i where a.idConsulta=i.idConsulta and a.Fecha_consulta=i.Fecha_consulta and i.idInforme=\"" + idInforme + "\" ;");
 						xmlInforme(rsInforme);						
 						
-						rsICD10
+						ResultSet rsICD10 = stmt.executeQuery("Select Codigo from informe_icd_10 where idInforme=\"" + idInforme + "\"");
+						xmlICD(rsICD10);
 						
-						ResultSet rsPrueba = stmt.executeQuery("SELECT p.idPrueba, p.Nombre, p.Observaciones, p.Tipo FROM PRUEBA p WHERE p.idInforme=\""+idInforme+"\";");
+						ResultSet rsPrueba = stmt.executeQuery("SELECT p.idPrueba, p.idPrueba_externo, p.Nombre, p.Observaciones, p.Tipo FROM PRUEBA p WHERE p.idInforme=\""+idInforme+"\";");
 						xmlPrueba(rsPrueba);
 						
 						 
@@ -207,10 +212,85 @@ public class SQLtoXML {
 				List<String> all_id = getIdMedico(rs);
 				for(String id : all_id) {
 					ResultSet rsMedico = stmt.executeQuery("SELECT m.Licencia, m.Nombre, m.Apellidos, m.Sexo, m.Especialidad FROM Medico m WHERE Licencia=\""+id + "\";");
-					System.out.println("llego");
 					xmlMedico(rsMedico);
+										
+					ResultSet rsConsulta = stmt.executeQuery("SELECT idConsulta from atiende WHERE Licencia=\""+id + "\";");
+					xmlAtiende(rsConsulta);
+					
+					pw.write(endLabel("Medico", 2));
 				}
 				pw.write(endLabel("Medicos", 1));
+			}
+		} catch (SQLException e) {
+			e.getMessage();
+		}
+	}
+	
+	public void addMedico(String s) throws IOException, SQLException{
+		//// create a Statement
+		try (Statement stmt = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY)){	
+			////execute query
+
+			try (ResultSet rs = stmt.executeQuery(s)){
+			    //Generate XML from query result
+								
+					xmlMedico(rs);
+			}
+		} catch (SQLException e) {
+			e.getMessage();
+		}
+	}
+	
+	public void addMedico(String s, String id) throws IOException, SQLException{
+		//// create a Statement
+		try (Statement stmt = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY)){	
+			////execute query
+
+			try (ResultSet rs = stmt.executeQuery(s)){
+			    //Generate XML from query result
+				
+					pw.write(startLabel("Medico", 2));
+					xmlMedico(rs);
+					
+					ResultSet rsConsulta = stmt.executeQuery("SELECT idConsulta from atiende WHERE Licencia=\""+id + "\";");
+					xmlAtiende(rsConsulta);
+					
+					pw.write(endLabel("Medico", 2));
+			}
+		} catch (SQLException e) {
+			e.getMessage();
+		}
+	}
+	
+	public void addAllICD(String s) throws IOException, SQLException{
+		//// create a Statement
+		try (Statement stmt = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY)){	
+			////execute query
+
+			try (ResultSet rs = stmt.executeQuery(s)){
+			    //Generate XML from query result
+				
+				pw.write(startLabel("ICD_10_Pregnancy", 1) + "\n");
+				xmlAllICD(rs);
+				pw.write(endLabel("ICD_10_Pregnancy", 1));
+
+			}
+		} catch (SQLException e) {
+			e.getMessage();
+		}
+	}
+	
+	public void addAllConsulta(String s) throws IOException, SQLException{
+		//// create a Statement
+		try (Statement stmt = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY)){	
+			////execute query
+
+			try (ResultSet rs = stmt.executeQuery(s)){
+			    //Generate XML from query result
+				pw.write(startLabel("Consultas", 1) + "\n");
+				xmlConsulta(rs);
+				pw.write(endLabel("Consultas", 1));
+
 			}
 		} catch (SQLException e) {
 			e.getMessage();
@@ -257,6 +337,7 @@ public class SQLtoXML {
 		pw.write(startEndLabel("Localidad", Localidad, 3));
 		pw.write(startEndLabel("Correo_electronico", Correo_electronico, 3));
 		pw.write(startEndLabel("Telefono", Telefono, 3));
+		pw.write(startEndLabel("Embarazada", Embarazada ? "1" : "0", 3));
 		
 	}
 	
@@ -284,7 +365,70 @@ public class SQLtoXML {
 		pw.write(startEndLabel("Apellidos", Apellidos, 3));
 		pw.write(startEndLabel("Sexo", Sexo, 3));
 		pw.write(startEndLabel("Especialidad", Especialidad, 3));
-		pw.write(endLabel("Medico", 2));
+		
+	}
+	
+	public void xmlAllICD(ResultSet result) throws IOException, SQLException {
+        
+		HashMap<String,String> idHash = new HashMap<>();
+       
+        String Codigo = null;
+        String Nombre = null;
+		
+		while(result.next()) {
+			Codigo = result.getString("Codigo");
+			Nombre = result.getString("Nombre");
+			
+	        idHash.put("Codigo", Codigo);
+			
+	        pw.write(startLabel("ICD_10", idHash, 2));
+			pw.write(startEndLabel("Nombre", Nombre, 3));
+			pw.write(endLabel("ICD_10", 2));
+		}
+		
+
+		
+	}
+	
+	public void xmlConsulta(ResultSet result) throws IOException, SQLException {
+               
+		HashMap<String,String> idHash = new HashMap<>();
+	       
+        String idConsulta = null;
+        String Localizacion = null;
+        String Centro_sanitario = null;
+		
+		while(result.next()) {
+			idConsulta = result.getString("idConsulta");
+			Localizacion = result.getString("Localizacion");
+			Centro_sanitario = result.getString("Centro_sanitario");
+			
+	        idHash.put("idConsulta", idConsulta);
+			
+	        pw.write(startLabel("Consulta", idHash, 2));
+			pw.write(startEndLabel("Localizacion", Localizacion, 3));
+			pw.write(startEndLabel("Centro_sanitario", Localizacion, 3));
+			pw.write(endLabel("Consulta", 2));
+		}
+		
+
+		
+	}
+	
+	public void xmlAtiende(ResultSet result) throws IOException, SQLException {
+        
+        String idConsulta = null;
+		
+        pw.write(startLabel("Consultas", 3) + "\n");
+        
+		while(result.next()) {
+			idConsulta = result.getString("idConsulta");
+						
+			pw.write(startEndLabel("idConsulta", idConsulta, 4));
+		}
+		
+        pw.write(endLabel("Consultas", 3));
+
 		
 	}
 	
@@ -371,15 +515,18 @@ public class SQLtoXML {
 		
 		
 		if(result!=null) {
+			
         	while(result.next()) {
+
         	idInforme = result.getString("idInforme");
-        	Licencia_medico = result.getString(Licencia_medico);
+        	Licencia_medico = result.getString("Licencia_medico");
         	Estado_paciente = result.getString("Estado_paciente");
         	Diagnostico = result.getString("Diagnostico");
         	idConsulta = result.getString("idConsulta");
         	Fecha_consulta = result.getString("Fecha_consulta");
         	Es_urgente = result.getString("Es_urgente");
         	Sintomas = result.getString("Sintomas");
+        	
 
             idHash.put("Informe", idInforme);
     		pw.write(startLabel("Informe", idHash, 4));
@@ -400,7 +547,27 @@ public class SQLtoXML {
 	    		pw.write(startEndLabel("Fecha_consulta", Fecha_consulta, 5));
 	    		pw.write(startEndLabel("Es_urgente", Es_urgente, 5));
 	    		pw.write(startEndLabel("Sintomas", Sintomas, 5));
+
 			}
+	}
+	
+	public void xmlICD(ResultSet result) throws IOException, SQLException {
+        
+		String code =  null;
+        
+		pw.write(startLabel("ICD_10", 5) + "\n");
+		
+		if(result!=null) {
+			
+        	while(result.next()) {        		
+        		code = result.getString("Codigo");
+        		pw.write(startEndLabel("Codigo_ICD_10", code, 6));
+        	}	
+		}else {
+    		pw.write(startEndLabel("Codigo_ICD_10", code, 6));
+		}
+		pw.write(endLabel("ICD_10", 5));
+		
 	}
 	
 	public void xmlPrueba(ResultSet result) throws IOException, SQLException {
@@ -408,28 +575,32 @@ public class SQLtoXML {
         HashMap<String,String> idHash = new HashMap<>();
 
         String idPrueba = null;
+        String idPrueba_externo = null;
         String Nombre= null;
         String Observaciones = null;
         String Tipo = null;
         
         boolean cnt = false;
 		
+        
 		if(result!=null) {
 			
         	while(result.next()) {
         		idPrueba = result.getString("idPrueba");
+        		idPrueba_externo = result.getString("idPrueba_externo");
         		Nombre = result.getString("Nombre");
         		Observaciones = result.getString("Observaciones");
         		Tipo = result.getString("Tipo");
 
             idHash.put("Prueba", idPrueba);
     		pw.write(startLabel("Prueba", idHash, 5)); 
+    		pw.write(startEndLabel("idPrueba_externo", idPrueba_externo, 6)); 
     		pw.write(startEndLabel("Nombre", Nombre, 6));
     		pw.write(startEndLabel("Observaciones", Observaciones, 6));
     		pw.write(startEndLabel("Tipo", Tipo, 6));
     		pw.write(endLabel("Prueba", 5));
 
-        	
+
     		cnt = true;
     		
         	}
@@ -438,6 +609,7 @@ public class SQLtoXML {
 		
 		if (!cnt){
     		pw.write(startLabel("Prueba", 5) + "\n"); 
+    		pw.write(startEndLabel("idPrueba_externo", idPrueba_externo, 6)); 
     		pw.write(startEndLabel("Nombre", Nombre, 6));
     		pw.write(startEndLabel("Observaciones", Observaciones, 6));
     		pw.write(startEndLabel("Tipo", Tipo, 6));
@@ -521,7 +693,7 @@ public class SQLtoXML {
         	System.out.println("error");
         else {
         while(result.next()) {
-            	all_id.add(result.getString("idPaciente"));
+            all_id.add(result.getString("idPaciente"));
         }  
         } 
         return(all_id);
@@ -541,6 +713,7 @@ public class SQLtoXML {
 		return null;
     }
     
+    
     public List<String> getIdMedico(ResultSet result) throws SQLException, IOException {
 
         List<String> all_id = new ArrayList<>();
@@ -554,6 +727,21 @@ public class SQLtoXML {
         } 
         return(all_id);
     }
+    
+    public List<String> getIdMedico(String s) throws SQLException, IOException {
+
+		try (Statement stmt = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY)){	
+			//execute query
+			try (ResultSet rs = stmt.executeQuery(s)){
+				return(getIdMedico(rs));
+			}
+			catch (SQLException e) {
+				e.printStackTrace();
+			} 
+		}
+		return null;
+    }
+    
     
     public void closeFW() throws IOException {
     	pw.close();
