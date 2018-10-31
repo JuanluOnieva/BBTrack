@@ -16,7 +16,7 @@ public class xmlAllDatabase
         	SQLtoXML con = new SQLtoXML();
         	con.initXML("pruebaXSL.xsl", "document.xsd", "bbTrack.xml");
 	    	con.addAllPaciente("SELECT * FROM PACIENTE;");
-	    	con.addAllPaciente("SELECT * FROM MEDICO;");
+	    	con.addAllMedico("SELECT * FROM MEDICO;");
 	    	con.endXML();
 	    	con.closeFW();
 		} catch (SQLException e) {

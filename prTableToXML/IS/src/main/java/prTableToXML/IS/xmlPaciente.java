@@ -17,10 +17,9 @@ public class xmlPaciente
     {
     	try {
         	SQLtoXML con = new SQLtoXML();
-        	System.out.println("hola");
         	List<String> allIdPaciente = con.getIdPaciente("SELECT * FROM PACIENTE;");
         	for(String id : allIdPaciente) {
-        		con.initXML("pruebaXSL.xsl", "document.xsd", id+".xml");
+        		con.initXML("pruebaXSL.xsl", "document.xsd", "Pacientes/"+id+".xml");
         		con.addPaciente("SELECT * FROM PACIENTE where idPaciente=" + id + ";");
         		con.endXML();
         		con.closeFW();
