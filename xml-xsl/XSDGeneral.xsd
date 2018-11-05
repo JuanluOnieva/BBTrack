@@ -1,0 +1,265 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+targetNamespace="https://www.w3schools.com"
+xmlns=""
+elementFormDefault="qualified">
+<xs:element name="bbTrack">
+  <xs:complexType>
+    <xs:sequence>
+    	#Pacientes
+    	<xs:element name="Pacientes">
+  			<xs:complexType>
+    			<xs:sequence>
+			    	#Paciente
+					<xs:element name="Paciente">
+			  			<xs:complexType>
+			    			<xs:sequence>
+			    				<xs:attribute name="idPaciente" type="xs:string" use="required"/>
+			    					<xs:simpleType>
+			    						<xs:restriction base="xs:string">
+											<xs:maxLength value="45"/>
+			    						</xs:restriction>
+			  						</xs:simpleType>
+								<xs:element name="NUSS" type="xs:string" use="required"/>
+									<xs:simpleType>
+			    						<xs:restriction base="xs:string">
+			      							<xs:maxLength value="45"/>
+			    						</xs:restriction>
+			  						</xs:simpleType>
+						      	<xs:element name="Nombre" type="xs:string" use="required"/>
+						      		<xs:simpleType>
+			    						<xs:restriction base="xs:string">
+			      							<xs:length value="50"/>
+			      							<xs:whiteSpace value="preserve"/>
+			    						</xs:restriction>
+			  						</xs:simpleType>
+						      	<xs:element name="Apellidos" type="xs:string" use="required"/>
+						      		<xs:simpleType>
+			    						<xs:restriction base="xs:string">
+			      							<xs:length value="45"/>
+			      							<xs:whiteSpace value="preserve"/>
+			    						</xs:restriction>
+			  						</xs:simpleType>
+						      	<xs:element name="Sexo" type="xs:string" use="required"/>
+						      		<xs:simpleType>
+			    						<xs:restriction base="xs:string">
+			      							<xs:pattern value="Hombre|Mujer"/>
+									    </xs:restriction>
+			  						</xs:simpleType>
+						      	<xs:element name="Fecha_nacimiento" type="xs:date" use="required"/>
+						      	<xs:element name="Domicilio" type="xs:string" use="required"/>
+						      		<xs:simpleType>
+			    						<xs:restriction base="xs:string">
+			    							<xs:length value="45"/>
+			      							<xs:whiteSpace value="preserve"/>
+			    						</xs:restriction>
+			  						</xs:simpleType>
+						      	<xs:element name="Localidad" type="xs:string" use="required"/>
+						      		<xs:simpleType>
+			    						<xs:restriction base="xs:string">
+			    							<xs:length value="45"/>
+			      							<xs:whiteSpace value="preserve"/>
+			    						</xs:restriction>
+			  						</xs:simpleType>
+						      	<xs:element name="Correo_electronico" type="xs:string" use="optional"/>
+						      		<xs:simpleType>
+			    						<xs:restriction base="xs:string">
+			      							<xs:length value="45"/>
+			    						</xs:restriction>
+			  						</xs:simpleType>
+						      	<xs:element name="Telefono" type="xs:string" use="optional"/>
+						      		<xs:simpleType>
+			    						<xs:restriction base="xs:string">
+			      							<xs:length value="45"/>
+			    						</xs:restriction>
+			  						</xs:simpleType>
+			            		<xs:element name="Embarazada" type="xs:boolean" use="required"/>
+						      	#Historial
+			    				<xs:element name="Historial">
+			  						<xs:complexType>
+			    						<xs:sequence>
+			    							<xs:attribute name="idHistorial" type="xs:string" use="required"/>
+			    								<xs:simpleType>
+			    									<xs:restriction base="xs:string">
+			      										<xs:length value="45"/>
+			    									</xs:restriction>
+			  									</xs:simpleType>
+			      							<xs:element name="Fecha_primera_consulta" type="xs:date" use="required"/>
+											<xs:element name="Vacunas" type="xs:string" use="required"/>
+			                    				<xs:simpleType>
+			                      					<xs:restriction base="xs:string">
+			                          					<xs:length value="45"/>
+			                      					</xs:restriction>
+			                    				</xs:simpleType>
+			                  				<xs:element name="Factor_de_riesgo_prenatal">
+			                    				<xs:complexType>
+			                      					<xs:sequence>
+								                        <xs:element name="Antecedentes_familiares" type="xs:string" use="optional"/>
+								                        <xs:element name="Factores_psicosociales" type="xs:string" use="optional"/>
+								                        <xs:element name="Antecedentes_obstreticos" type="xs:string" use="optional"/>
+								                        <xs:element name="Antecedentes_personales" type="xs:string" use="optional"/>
+								                        <xs:element name="Patologia_materna" type="xs:string" use="optional"/>
+								                        <xs:element name="Riesgos_especificos" type="xs:string" use="optional"/>
+								                        <xs:element name="Exposicion_a_teratogenos" type="xs:string" use="optional"/>
+													</xs:sequence>
+			                    				</xs:complexType>
+			                				#Informe			      	
+			    							<xs:element name="Informe">
+			  									<xs:complexType>
+			    									<xs:sequence>
+			    										<xs:attribute name="idInforme" type="xs:string" use="required"/>
+			    											<xs:simpleType>
+			    												<xs:restriction base="xs:string">
+			      													<xs:length value="45"/>
+			    												</xs:restriction>
+			  												</xs:simpleType>
+			    										<xs:element name="Estado_paciente" type="xs:string" use="required"/>
+			    											<xs:simpleType>
+			    												<xs:restriction base="xs:string">
+			      													<xs:length value="45"/>
+			      													<xs:whiteSpace value="preserve"/>
+			    												</xs:restriction>
+			  												</xs:simpleType>
+						      							<xs:element name="Diagnostico" type="xs:string" use="required"/>
+						      								<xs:simpleType>
+			    												<xs:restriction base="xs:string">
+			      													<xs:length value="255"/>
+			      													<xs:whiteSpace value="preserve"/>
+			    												</xs:restriction>
+			  												</xs:simpleType>
+			                          					<xs:element name="idConsulta" type="xs:string" use="required"/>
+			                            					<xs:simpleType>
+			                            						<xs:restriction base="xs:string">
+									                                <xs:length value="45"/>
+									                                <xs:whiteSpace value="preserve"/>
+			                            						</xs:restriction>
+			                          						</xs:simpleType>
+								                        <xs:element name="Fecha_consulta" type="xs:date" use="optional"/>
+								                        <xs:element name="Es_urgente" type="xs:boolean" use="required"/>
+								                        <xs:element name="Sintomas" type="xs:string" use="optional"/>
+								                            <xs:simpleType>
+								                            	<xs:restriction base="xs:string">
+								                                	<xs:length value="255"/>
+								                                	<xs:whiteSpace value="preserve"/>
+								                            	</xs:restriction>
+								                          	</xs:simpleType>
+														<xs:element name="ICD_10">
+			                    							<xs:complexType>
+			                      								<xs:sequence>
+											                        <xs:element name="Codigo_ICD_10" type="xs:string" use="required"/>
+																</xs:sequence>
+			                    							</xs:complexType>
+
+			  											#Pruebas
+			    										<xs:element name="Prueba" maxOccurs="unbounded">
+			  												<xs:complexType>
+			    												<xs:sequence>
+			    													<xs:attribute name="idPrueba" type="xs:string" use="required"/>
+			    														<xs:simpleType>
+			    															<xs:restriction base="xs:string">
+			      																<xs:length value="45"/>
+			    															</xs:restriction>
+			  															</xs:simpleType>
+			  														<xs:element name="idExterno" type="xs:string" use="required"/>
+								                                	<xs:element name="Nombre" type="xs:string" use="required"/>
+									                                	<xs:simpleType>
+									                                  		<xs:restriction base="xs:string">
+									                                      		<xs:length value="45"/>
+									                                  		</xs:restriction>
+									                                	</xs:simpleType>
+								                                	<xs:element name="Observaciones" type="xs:string" use="required"/>
+								                                		<xs:simpleType>
+									                                  		<xs:restriction base="xs:string">
+									                                      		<xs:length value="255"/>
+									                                  		</xs:restriction>
+									                                	</xs:simpleType>
+															    	<xs:element name="Tipo" type="string" use="required"/>
+															      		<xs:simpleType>
+																			<xs:restriction base="xs:string">
+																		    	<xs:enumeration value="Rutinaria"/>
+																		    	<xs:enumeration value="Especial"/>
+																			</xs:restriction>
+																		</xs:simpleType>
+			      												</xs:sequence>
+			  												</xs:complexType>
+														</xs:element>
+
+			    									</xs:sequence>
+			  									</xs:complexType>
+											</xs:element>
+
+			    						</xs:sequence>
+			  						</xs:complexType>
+								</xs:element>
+			     
+    						</xs:sequence>
+  						</xs:complexType>
+					</xs:element>
+					
+				</xs:sequence>
+  	  		</xs:complexType>
+		</xs:element>
+		#Medicos
+		<xs:element name="Medicos">
+			 <xs:complexType>
+			    <xs:sequence>
+					#Medico
+					<xs:element name="Medico">
+			  			<xs:complexType>
+			    			<xs:sequence>
+			      				<xs:attribute name="Licencia" type="xs:string" use="required"/>
+				      			<xs:element name="Nombre" type="xs:string" use="required"/>
+				      				<xs:simpleType>
+									    <xs:restriction base="xs:string">
+										    <xs:length value="45"/>
+									    </xs:restriction>
+									 </xs:simpleType>
+						      	<xs:element name="Apellidos" type="xs:string" use="required"/>
+						      		<xs:simpleType>
+									    <xs:restriction base="xs:string">
+										    <xs:length value="45"/>
+										    <xs:whiteSpace value="preserve"/>
+									    </xs:restriction>
+									 </xs:simpleType>
+						      	<xs:element name="Sexo" type="xs:string" use="required"/>
+						      		<xs:simpleType>
+			    						  <xs:restriction base="xs:string">
+			      							<xs:pattern value="Hombre|Mujer"/>
+									      </xs:restriction>
+			  						  </xs:simpleType>
+						      	<xs:element name="Especialidad" type="xs:string" use="required"/>
+						      		<xs:simpleType>
+								    	<xs:restriction base="xs:string">
+								      		<xs:length value="45"/>
+								    	</xs:restriction>
+								  	 </xs:simpleType>
+								<xs:element name="Consultas">
+			  						<xs:complexType>
+			    						<xs:sequence>
+			      							<xs:element name="idConsulta" type="xs:string" use="required"/>
+			      						</xs:sequence>
+			      					</xs:complexType>
+			    			</xs:sequence>
+			  			</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+			</xs:complexType>
+		</xs:element>
+	    #ICD-10
+	    <xs:element name="ICD_10_Pregnancy">
+	      <xs:complexType>
+	        <xs:sequence>
+	          <xs:attribute name="Codigo" type="xs:string" use="required"/>
+	          <xs:element name="Nombre" type="xs:string" use="required"/>
+	                <xs:simpleType>
+	                  <xs:restriction base="xs:string">
+	                    <xs:length value="255"/>
+	                  </xs:restriction>
+	                </xs:simpleType>
+	        </xs:sequence>
+	      </xs:complexType>
+	    </xs:element>  
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+</xs:schema>

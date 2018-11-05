@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="pruebaXSL.xsl"?>
-<bbTrack xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="document.xsd">
+<?xml-stylesheet type="text/xsl" href="XSLHome.xsl"?>
+<bbTrack xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="XSDGeneral.xsd">
 	<Pacientes>
 		<Paciente idPaciente="10009">
 			<NUSS>AN-10009</NUSS>
@@ -57,6 +57,7 @@
 			<Correo_electronico>luciaFr@bbtrack.es</Correo_electronico>
 			<Telefono>735258649</Telefono>
 			<Embarazada>1</Embarazada>
+			<Historial idHistorial="H-10169">
 				<Fecha_primera_consulta></Fecha_primera_consulta>
 				<Vacunas></Vacunas>
 				<Factor_de_riesgo_prenatal>
@@ -233,6 +234,7 @@
 			<Correo_electronico>doroteaBe@bbtrack.es</Correo_electronico>
 			<Telefono>729626220</Telefono>
 			<Embarazada>1</Embarazada>
+			<Historial idHistorial="H-11529">
 				<Fecha_primera_consulta></Fecha_primera_consulta>
 				<Vacunas></Vacunas>
 				<Factor_de_riesgo_prenatal>
@@ -275,6 +277,8 @@
 			<Correo_electronico>doloresRi@bbtrack.es</Correo_electronico>
 			<Telefono>627550890</Telefono>
 			<Embarazada>1</Embarazada>
+			<Historial idHistorial="H-12288">
+
 				<Fecha_primera_consulta></Fecha_primera_consulta>
 				<Vacunas></Vacunas>
 				<Factor_de_riesgo_prenatal>
@@ -634,6 +638,8 @@
 			<Correo_electronico>estrellaGn@bbtrack.es</Correo_electronico>
 			<Telefono>729843321</Telefono>
 			<Embarazada>0</Embarazada>
+			<Historial idHistorial="H-18616">
+
 				<Fecha_primera_consulta></Fecha_primera_consulta>
 				<Vacunas></Vacunas>
 				<Factor_de_riesgo_prenatal>
