@@ -6,7 +6,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 <xsl:template match="/">
   <html>
   <body>
-  <h2>Datos Paciente</h2>
+  <h2>Datos Medico</h2>
   <table border="1">
     <tr bgcolor="#9acd32">
       <th>Licencia</th>
@@ -16,7 +16,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
       <th>Especialidad</th>
       <th>Consultas</th>      
     </tr>
-    <xsl:for-each select="bbTrack/Paciente">
+    <xsl:for-each select="bbTrack/Medico">
     <tr>
       <td><xsl:value-of select="@Licencia"/></td>
       <td><xsl:value-of select="Nombre"/></td>

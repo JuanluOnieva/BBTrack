@@ -83,11 +83,6 @@ public class SQLtoXML {
 					catch(SQLException e) {
 						xmlFRP(null);
 					}
-					
-					pw.write(endLabel("Factor_de_riesgo_prenatal", 4));
-					
-					
-
 										
 					ResultSet rsInforme = stmt.executeQuery("SELECT idInforme FROM INFORME WHERE idHistorial=\"H-"+id + "\";");
 					
@@ -249,7 +244,6 @@ public class SQLtoXML {
 			try (ResultSet rs = stmt.executeQuery(s)){
 			    //Generate XML from query result
 				
-					pw.write(startLabel("Medico", 2));
 					xmlMedico(rs);
 					
 					ResultSet rsConsulta = stmt.executeQuery("SELECT idConsulta from atiende WHERE Licencia=\""+id + "\";");

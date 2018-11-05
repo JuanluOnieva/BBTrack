@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="pruebaXSL.xsl"?>
-<bbTrack xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="document.xsd">
+<?xml-stylesheet type="text/xsl" href="../XSLPaciente.xsl"?>
+<bbTrack xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../XSDPaciente.xsd">
 		<Paciente idPaciente="15815">
 			<NUSS>AN-15815</NUSS>
 			<Nombre>Maria</Nombre>
@@ -23,7 +23,6 @@
 					<Patologia_materna>Hipertensión arterial</Patologia_materna>
 					<Riesgos_especificos>Gestacion multiple</Riesgos_especificos>
 					<Exposicion_a_teratogenos></Exposicion_a_teratogenos>
-				</Factor_de_riesgo_prenatal>
 				</Factor_de_riesgo_prenatal>
 				<Informe Informe="H-15815-202HC-180505">
 					<Licencia_medico>M-43434</Licencia_medico>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="pruebaXSL.xsl"?>
-<bbTrack xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="document.xsd">
+<?xml-stylesheet type="text/xsl" href="../XSLPaciente.xsl"?>
+<bbTrack xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../XSDPaciente.xsd">
 		<Paciente idPaciente="11194">
 			<NUSS>AN-11194</NUSS>
 			<Nombre>Leyre</Nombre>
@@ -23,7 +23,6 @@
 					<Patologia_materna>Anemia</Patologia_materna>
 					<Riesgos_especificos>Estática fetal anómala pasada la semana 36</Riesgos_especificos>
 					<Exposicion_a_teratogenos></Exposicion_a_teratogenos>
-				</Factor_de_riesgo_prenatal>
 				</Factor_de_riesgo_prenatal>
 				<Informe Informe="H-11194-202HC-180123">
 					<Licencia_medico>M-23444</Licencia_medico>

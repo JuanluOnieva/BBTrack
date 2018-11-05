@@ -19,7 +19,7 @@ public class xmlPacienteMedico
         	SQLtoXML con = new SQLtoXML();
         	List<String> allIdPaciente = con.getIdPaciente("SELECT * FROM PACIENTE;");
         	for(String id : allIdPaciente) {
-        		con.initXML("pruebaXSL.xsl", "document.xsd", "Pacientes/"+id+".xml");
+        		con.initXML("../XSLPaciente.xsl", "../XSDPaciente.xsd", "Pacientes/"+id+".xml");
         		con.addPaciente("SELECT * FROM PACIENTE where idPaciente=" + id + ";");
         		con.endXML();
         		con.closeFW();
@@ -28,7 +28,7 @@ public class xmlPacienteMedico
         	
         	List<String> allIdMedico = con.getIdMedico("SELECT * FROM MEDICO;");
         	for(String id : allIdMedico) {
-        		con.initXML("pruebaXSL.xsl", "document.xsd", "Medicos/"+id+".xml");
+        		con.initXML("../XSLMedico.xsl", "../XSDMedico.xsd", "Medicos/"+id+".xml");
         		con.addMedico("SELECT m.Licencia, m.Nombre, m.Apellidos, m.Sexo, m.Especialidad FROM Medico m WHERE Licencia=\""+id + "\";", id);
         		con.endXML();
         		con.closeFW();

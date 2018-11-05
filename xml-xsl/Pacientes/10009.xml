@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="pruebaXSL.xsl"?>
-<bbTrack xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="document.xsd">
+<?xml-stylesheet type="text/xsl" href="../XSLPaciente.xsl"?>
+<bbTrack xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../XSDPaciente.xsd">
 		<Paciente idPaciente="10009">
 			<NUSS>AN-10009</NUSS>
 			<Nombre>Carmen</Nombre>
@@ -23,7 +23,6 @@
 					<Patologia_materna></Patologia_materna>
 					<Riesgos_especificos></Riesgos_especificos>
 					<Exposicion_a_teratogenos>Fármacos</Exposicion_a_teratogenos>
-				</Factor_de_riesgo_prenatal>
 				</Factor_de_riesgo_prenatal>
 				<Informe Informe="H-10009-209HCH-180407">
 					<Licencia_medico>M-33048</Licencia_medico>

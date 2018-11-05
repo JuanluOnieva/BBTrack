@@ -20,7 +20,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
       	<xsl:variable name = "name"> 
     		<xsl:value-of select="@idPaciente"/>.xml
       	</xsl:variable>
-      		<a href="{$name}">    		
+      		<a href="Pacientes/{$name}">    		
       			<xsl:value-of select="@idPaciente"/>
           </a> 
   	  </td>
@@ -43,7 +43,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
         <xsl:variable name = "name"> 
         <xsl:value-of select="@Licencia"/>.xml
         </xsl:variable>
-          <a href="{$name}">        
+          <a href="Medicos/{$name}">        
             <xsl:value-of select="@Licencia"/>
           </a> 
       </td>
