@@ -35,7 +35,7 @@
 					<ICD_10>
 						<Codigo_ICD_10>O45</Codigo_ICD_10>
 					</ICD_10>
-					<Prueba Prueba="P-8">
+					<Prueba idPrueba="P-8">
 						<idPrueba_externo>P-14250-122HC-180319</idPrueba_externo>
 						<Nombre>Radiografia</Nombre>
 						<Observaciones>Esguince de primer grado</Observaciones>

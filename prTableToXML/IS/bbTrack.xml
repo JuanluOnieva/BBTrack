@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="pruebaXSL.xsl"?>
-<bbTrack xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="document.xsd">
+<?xml-stylesheet type="text/xsl" href="XSLHome.xsl"?>
+<bbTrack xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="XSDHome.xsd">
 	<Pacientes>
 		<Paciente idPaciente="10009">
 			<NUSS>AN-10009</NUSS>
@@ -37,7 +37,7 @@
 						<Codigo_ICD_10>O84</Codigo_ICD_10>
 						<Codigo_ICD_10>O41</Codigo_ICD_10>
 					</ICD_10>
-					<Prueba Prueba="P-10">
+					<Prueba idPrueba="P-10">
 						<idPrueba_externo>P-10009-209HCH-180407</idPrueba_externo>
 						<Nombre>Cariotipo</Nombre>
 						<Observaciones>Todo correcto</Observaciones>
@@ -57,6 +57,7 @@
 			<Correo_electronico>luciaFr@bbtrack.es</Correo_electronico>
 			<Telefono>735258649</Telefono>
 			<Embarazada>1</Embarazada>
+			<Historial idHistorial="">
 				<Fecha_primera_consulta></Fecha_primera_consulta>
 				<Vacunas></Vacunas>
 				<Factor_de_riesgo_prenatal>
@@ -68,7 +69,7 @@
 					<Riesgos_especificos></Riesgos_especificos>
 					<Exposicion_a_teratogenos></Exposicion_a_teratogenos>
 				</Factor_de_riesgo_prenatal>
-				<Informe>
+				<Informe Informe="">
 					<Licencia_medico></Licencia_medico>
 					<Estado_paciente></Estado_paciente>
 					<Diagnostico></Diagnostico>
@@ -79,7 +80,7 @@
 					<ICD_10>
 						<Codigo_ICD_10></Codigo_ICD_10>
 					</ICD_10>
-					<Prueba>
+					<Prueba Prueba="">
 						<idPrueba_externo></idPrueba_externo>
 						<Nombre></Nombre>
 						<Observaciones></Observaciones>
@@ -124,7 +125,7 @@
 						<Codigo_ICD_10>O48</Codigo_ICD_10>
 						<Codigo_ICD_10>O80</Codigo_ICD_10>
 					</ICD_10>
-					<Prueba Prueba="P-6">
+					<Prueba idPrueba="P-6">
 						<idPrueba_externo>P-10725-202HC-180125</idPrueba_externo>
 						<Nombre>Ecografia transvaginal</Nombre>
 						<Observaciones>Todo correcto</Observaciones>
@@ -169,7 +170,7 @@
 						<Codigo_ICD_10>O16</Codigo_ICD_10>
 						<Codigo_ICD_10>O25</Codigo_ICD_10>
 					</ICD_10>
-					<Prueba>
+					<Prueba Prueba="">
 						<idPrueba_externo></idPrueba_externo>
 						<Nombre></Nombre>
 						<Observaciones></Observaciones>
@@ -213,7 +214,7 @@
 						<Codigo_ICD_10>O63</Codigo_ICD_10>
 						<Codigo_ICD_10>O48</Codigo_ICD_10>
 					</ICD_10>
-					<Prueba Prueba="P-9">
+					<Prueba idPrueba="P-9">
 						<idPrueba_externo>P-11470-209HCH-180415</idPrueba_externo>
 						<Nombre>Ecografia transvaginal</Nombre>
 						<Observaciones>Lesion en las trompas de falopio</Observaciones>
@@ -233,6 +234,7 @@
 			<Correo_electronico>doroteaBe@bbtrack.es</Correo_electronico>
 			<Telefono>729626220</Telefono>
 			<Embarazada>1</Embarazada>
+			<Historial idHistorial="">
 				<Fecha_primera_consulta></Fecha_primera_consulta>
 				<Vacunas></Vacunas>
 				<Factor_de_riesgo_prenatal>
@@ -244,7 +246,7 @@
 					<Riesgos_especificos></Riesgos_especificos>
 					<Exposicion_a_teratogenos></Exposicion_a_teratogenos>
 				</Factor_de_riesgo_prenatal>
-				<Informe>
+				<Informe Informe="">
 					<Licencia_medico></Licencia_medico>
 					<Estado_paciente></Estado_paciente>
 					<Diagnostico></Diagnostico>
@@ -255,7 +257,7 @@
 					<ICD_10>
 						<Codigo_ICD_10></Codigo_ICD_10>
 					</ICD_10>
-					<Prueba>
+					<Prueba Prueba="">
 						<idPrueba_externo></idPrueba_externo>
 						<Nombre></Nombre>
 						<Observaciones></Observaciones>
@@ -275,6 +277,7 @@
 			<Correo_electronico>doloresRi@bbtrack.es</Correo_electronico>
 			<Telefono>627550890</Telefono>
 			<Embarazada>1</Embarazada>
+			<Historial idHistorial="">
 				<Fecha_primera_consulta></Fecha_primera_consulta>
 				<Vacunas></Vacunas>
 				<Factor_de_riesgo_prenatal>
@@ -286,7 +289,7 @@
 					<Riesgos_especificos></Riesgos_especificos>
 					<Exposicion_a_teratogenos></Exposicion_a_teratogenos>
 				</Factor_de_riesgo_prenatal>
-				<Informe>
+				<Informe Informe="">
 					<Licencia_medico></Licencia_medico>
 					<Estado_paciente></Estado_paciente>
 					<Diagnostico></Diagnostico>
@@ -297,7 +300,7 @@
 					<ICD_10>
 						<Codigo_ICD_10></Codigo_ICD_10>
 					</ICD_10>
-					<Prueba>
+					<Prueba Prueba="">
 						<idPrueba_externo></idPrueba_externo>
 						<Nombre></Nombre>
 						<Observaciones></Observaciones>
@@ -340,7 +343,7 @@
 					<ICD_10>
 						<Codigo_ICD_10>O45</Codigo_ICD_10>
 					</ICD_10>
-					<Prueba Prueba="P-8">
+					<Prueba idPrueba="P-8">
 						<idPrueba_externo>P-14250-122HC-180319</idPrueba_externo>
 						<Nombre>Radiografia</Nombre>
 						<Observaciones>Esguince de primer grado</Observaciones>
@@ -385,7 +388,7 @@
 						<Codigo_ICD_10>O97</Codigo_ICD_10>
 						<Codigo_ICD_10>O45</Codigo_ICD_10>
 					</ICD_10>
-					<Prueba>
+					<Prueba Prueba="">
 						<idPrueba_externo></idPrueba_externo>
 						<Nombre></Nombre>
 						<Observaciones></Observaciones>
@@ -405,7 +408,7 @@
 						<Codigo_ICD_10>O05</Codigo_ICD_10>
 						<Codigo_ICD_10>O11</Codigo_ICD_10>
 					</ICD_10>
-					<Prueba Prueba="P-5">
+					<Prueba idPrueba="P-5">
 						<idPrueba_externo>P-15815-202HC-181005</idPrueba_externo>
 						<Nombre>Analisis de sangre</Nombre>
 						<Observaciones>Anemia</Observaciones>
@@ -450,13 +453,13 @@
 						<Codigo_ICD_10>O43</Codigo_ICD_10>
 						<Codigo_ICD_10>O12</Codigo_ICD_10>
 					</ICD_10>
-					<Prueba Prueba="P-1">
+					<Prueba idPrueba="P-1">
 						<idPrueba_externo>P-15854-202HC-180303-1</idPrueba_externo>
 						<Nombre>Analisis de sangre</Nombre>
 						<Observaciones>Todo correcto</Observaciones>
 						<Tipo>Rutinaria</Tipo>
 					</Prueba>
-					<Prueba Prueba="P-3">
+					<Prueba idPrueba="P-3">
 						<idPrueba_externo>P-15854-202HC-180303-2</idPrueba_externo>
 						<Nombre>Amniocentesis</Nombre>
 						<Observaciones>Todo correcto</Observaciones>
@@ -501,7 +504,7 @@
 						<Codigo_ICD_10>O15</Codigo_ICD_10>
 						<Codigo_ICD_10>O03</Codigo_ICD_10>
 					</ICD_10>
-					<Prueba>
+					<Prueba Prueba="">
 						<idPrueba_externo></idPrueba_externo>
 						<Nombre></Nombre>
 						<Observaciones></Observaciones>
@@ -521,13 +524,13 @@
 						<Codigo_ICD_10>O63</Codigo_ICD_10>
 						<Codigo_ICD_10>O29</Codigo_ICD_10>
 					</ICD_10>
-					<Prueba Prueba="P-2">
+					<Prueba idPrueba="P-2">
 						<idPrueba_externo>P-17084-209HCH-180707-1</idPrueba_externo>
 						<Nombre>Analisis de orina</Nombre>
 						<Observaciones>Toco correcto</Observaciones>
 						<Tipo>Rutinaria</Tipo>
 					</Prueba>
-					<Prueba Prueba="P-4">
+					<Prueba idPrueba="P-4">
 						<idPrueba_externo>P-17084-209HCH-180707-2</idPrueba_externo>
 						<Nombre>Ecografia</Nombre>
 						<Observaciones>Toco correcto</Observaciones>
@@ -571,7 +574,7 @@
 						<Codigo_ICD_10>O16</Codigo_ICD_10>
 						<Codigo_ICD_10>O10</Codigo_ICD_10>
 					</ICD_10>
-					<Prueba Prueba="P-11">
+					<Prueba idPrueba="P-11">
 						<idPrueba_externo>P-17430-132HCH-180510</idPrueba_externo>
 						<Nombre>Histeroscopia</Nombre>
 						<Observaciones>Todo correcto</Observaciones>
@@ -614,7 +617,7 @@
 					<ICD_10>
 						<Codigo_ICD_10>O32</Codigo_ICD_10>
 					</ICD_10>
-					<Prueba>
+					<Prueba Prueba="">
 						<idPrueba_externo></idPrueba_externo>
 						<Nombre></Nombre>
 						<Observaciones></Observaciones>
@@ -634,6 +637,7 @@
 			<Correo_electronico>estrellaGn@bbtrack.es</Correo_electronico>
 			<Telefono>729843321</Telefono>
 			<Embarazada>0</Embarazada>
+			<Historial idHistorial="">
 				<Fecha_primera_consulta></Fecha_primera_consulta>
 				<Vacunas></Vacunas>
 				<Factor_de_riesgo_prenatal>
@@ -645,7 +649,7 @@
 					<Riesgos_especificos></Riesgos_especificos>
 					<Exposicion_a_teratogenos></Exposicion_a_teratogenos>
 				</Factor_de_riesgo_prenatal>
-				<Informe>
+				<Informe Informe="">
 					<Licencia_medico></Licencia_medico>
 					<Estado_paciente></Estado_paciente>
 					<Diagnostico></Diagnostico>
@@ -656,7 +660,7 @@
 					<ICD_10>
 						<Codigo_ICD_10></Codigo_ICD_10>
 					</ICD_10>
-					<Prueba>
+					<Prueba Prueba="">
 						<idPrueba_externo></idPrueba_externo>
 						<Nombre></Nombre>
 						<Observaciones></Observaciones>
@@ -700,7 +704,7 @@
 						<Codigo_ICD_10>O21</Codigo_ICD_10>
 						<Codigo_ICD_10>O30</Codigo_ICD_10>
 					</ICD_10>
-					<Prueba>
+					<Prueba Prueba="">
 						<idPrueba_externo></idPrueba_externo>
 						<Nombre></Nombre>
 						<Observaciones></Observaciones>
@@ -732,7 +736,7 @@
 					<Riesgos_especificos>Embarazo prolongado</Riesgos_especificos>
 					<Exposicion_a_teratogenos>Fármacos</Exposicion_a_teratogenos>
 				</Factor_de_riesgo_prenatal>
-				<Informe>
+				<Informe Informe="">
 					<Licencia_medico></Licencia_medico>
 					<Estado_paciente></Estado_paciente>
 					<Diagnostico></Diagnostico>
@@ -743,7 +747,7 @@
 					<ICD_10>
 						<Codigo_ICD_10></Codigo_ICD_10>
 					</ICD_10>
-					<Prueba>
+					<Prueba Prueba="">
 						<idPrueba_externo></idPrueba_externo>
 						<Nombre></Nombre>
 						<Observaciones></Observaciones>

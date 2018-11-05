@@ -37,13 +37,13 @@
 						<Codigo_ICD_10>O43</Codigo_ICD_10>
 						<Codigo_ICD_10>O12</Codigo_ICD_10>
 					</ICD_10>
-					<Prueba Prueba="P-1">
+					<Prueba idPrueba="P-1">
 						<idPrueba_externo>P-15854-202HC-180303-1</idPrueba_externo>
 						<Nombre>Analisis de sangre</Nombre>
 						<Observaciones>Todo correcto</Observaciones>
 						<Tipo>Rutinaria</Tipo>
 					</Prueba>
-					<Prueba Prueba="P-3">
+					<Prueba idPrueba="P-3">
 						<idPrueba_externo>P-15854-202HC-180303-2</idPrueba_externo>
 						<Nombre>Amniocentesis</Nombre>
 						<Observaciones>Todo correcto</Observaciones>

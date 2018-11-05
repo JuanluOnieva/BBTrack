@@ -36,7 +36,7 @@
 						<Codigo_ICD_10>O84</Codigo_ICD_10>
 						<Codigo_ICD_10>O41</Codigo_ICD_10>
 					</ICD_10>
-					<Prueba Prueba="P-10">
+					<Prueba idPrueba="P-10">
 						<idPrueba_externo>P-10009-209HCH-180407</idPrueba_externo>
 						<Nombre>Cariotipo</Nombre>
 						<Observaciones>Todo correcto</Observaciones>

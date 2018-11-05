@@ -24,7 +24,7 @@
 					<Riesgos_especificos>Embarazo prolongado</Riesgos_especificos>
 					<Exposicion_a_teratogenos>Fármacos</Exposicion_a_teratogenos>
 				</Factor_de_riesgo_prenatal>
-				<Informe>
+				<Informe Informe="">
 					<Licencia_medico></Licencia_medico>
 					<Estado_paciente></Estado_paciente>
 					<Diagnostico></Diagnostico>
@@ -32,7 +32,7 @@
 					<Fecha_consulta></Fecha_consulta>
 					<Es_urgente></Es_urgente>
 					<Sintomas></Sintomas>
-					<Prueba>
+					<Prueba Prueba="">
 						<idPrueba_externo></idPrueba_externo>
 						<Nombre></Nombre>
 						<Observaciones></Observaciones>

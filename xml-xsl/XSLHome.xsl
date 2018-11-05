@@ -5,8 +5,11 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
 <xsl:template match="/">
   <html>
+  <head>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+  </head>
   <body>
-  <h2>Vista General</h2>
+  <h1>bbTrack</h1>
   <h2>Lista de pacientes</h2>
   <table border="1">
     <tr bgcolor="#9acd32">
@@ -16,7 +19,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     </tr>
     <xsl:for-each select="bbTrack/Pacientes/Paciente">
     <tr>
-      <td bgcolor="#F2F5A9">
+      <td>
       	<xsl:variable name = "name"> 
     		<xsl:value-of select="@idPaciente"/>.xml
       	</xsl:variable>
@@ -39,7 +42,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     </tr>
     <xsl:for-each select="bbTrack/Medicos/Medico">
     <tr>
-      <td bgcolor="#F2F5A9">
+      <td>
         <xsl:variable name = "name"> 
         <xsl:value-of select="@Licencia"/>.xml
         </xsl:variable>
@@ -61,7 +64,11 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     </tr>
     <xsl:for-each select="bbTrack/ICD_10_Pregnancy/ICD_10">
     <tr>
-      <td><xsl:value-of select="@Codigo"/></td>
+      <td>
+          <a href="http://apps.who.int/classifications/icd10/browse/2010/en#/XV">        
+            <xsl:value-of select="@Codigo"/>
+          </a> 
+      </td>
       <td><xsl:value-of select="Nombre"/></td>
     </tr>
     </xsl:for-each>

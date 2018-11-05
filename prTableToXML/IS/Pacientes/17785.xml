@@ -35,7 +35,7 @@
 					<ICD_10>
 						<Codigo_ICD_10>O32</Codigo_ICD_10>
 					</ICD_10>
-					<Prueba>
+					<Prueba Prueba="">
 						<idPrueba_externo></idPrueba_externo>
 						<Nombre></Nombre>
 						<Observaciones></Observaciones>

@@ -444,16 +444,16 @@ public class SQLtoXML {
         	Fecha_primera_consulta = result.getString("Fecha_primera_consulta");
         	Vacunas = result.getString("Vacunas");
 
-            idHash.put("idHistorial", idHistorial);
 
-            pw.write(startLabel("Historial", idHash, 3));
             
         	}
         }else {
 
-        	pw.write(startLabel("Historial", 3));
         }
-        
+        idHistorial = idHistorial==null ? "" : idHistorial;
+        idHash.put("idHistorial", idHistorial);
+
+        pw.write(startLabel("Historial", idHash, 3));
 		pw.write(startEndLabel("Fecha_primera_consulta", Fecha_primera_consulta, 4));
 		pw.write(startEndLabel("Vacunas", Vacunas, 4));
 
@@ -533,7 +533,11 @@ public class SQLtoXML {
     		pw.write(startEndLabel("Sintomas", Sintomas, 5));
     		
         	}}else {
-        		pw.write(startLabel("Informe", 4)+ "\n");
+        		
+        		idInforme = idInforme==null ? "" : idInforme;
+                idHash.put("Informe", idInforme);
+
+        		pw.write(startLabel("Informe", idHash, 4));
         		pw.write(startEndLabel("Licencia_medico", Licencia_medico, 5));
         		pw.write(startEndLabel("Estado_paciente", Estado_paciente, 5));
 	    		pw.write(startEndLabel("Diagnostico", Diagnostico, 5));
@@ -586,7 +590,7 @@ public class SQLtoXML {
         		Observaciones = result.getString("Observaciones");
         		Tipo = result.getString("Tipo");
 
-            idHash.put("Prueba", idPrueba);
+            idHash.put("idPrueba", idPrueba);
     		pw.write(startLabel("Prueba", idHash, 5)); 
     		pw.write(startEndLabel("idPrueba_externo", idPrueba_externo, 6)); 
     		pw.write(startEndLabel("Nombre", Nombre, 6));
@@ -602,7 +606,11 @@ public class SQLtoXML {
 		
 		
 		if (!cnt){
-    		pw.write(startLabel("Prueba", 5) + "\n"); 
+
+			idPrueba = idPrueba==null ? "" : idPrueba;
+            idHash.put("Prueba", idPrueba);
+
+    		pw.write(startLabel("Prueba", idHash, 5)); 
     		pw.write(startEndLabel("idPrueba_externo", idPrueba_externo, 6)); 
     		pw.write(startEndLabel("Nombre", Nombre, 6));
     		pw.write(startEndLabel("Observaciones", Observaciones, 6));

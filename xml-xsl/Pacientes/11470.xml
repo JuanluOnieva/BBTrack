@@ -36,7 +36,7 @@
 						<Codigo_ICD_10>O63</Codigo_ICD_10>
 						<Codigo_ICD_10>O48</Codigo_ICD_10>
 					</ICD_10>
-					<Prueba Prueba="P-9">
+					<Prueba idPrueba="P-9">
 						<idPrueba_externo>P-11470-209HCH-180415</idPrueba_externo>
 						<Nombre>Ecografia transvaginal</Nombre>
 						<Observaciones>Lesion en las trompas de falopio</Observaciones>

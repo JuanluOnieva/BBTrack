@@ -37,7 +37,7 @@
 						<Codigo_ICD_10>O97</Codigo_ICD_10>
 						<Codigo_ICD_10>O45</Codigo_ICD_10>
 					</ICD_10>
-					<Prueba>
+					<Prueba Prueba="">
 						<idPrueba_externo></idPrueba_externo>
 						<Nombre></Nombre>
 						<Observaciones></Observaciones>
@@ -57,7 +57,7 @@
 						<Codigo_ICD_10>O05</Codigo_ICD_10>
 						<Codigo_ICD_10>O11</Codigo_ICD_10>
 					</ICD_10>
-					<Prueba Prueba="P-5">
+					<Prueba idPrueba="P-5">
 						<idPrueba_externo>P-15815-202HC-181005</idPrueba_externo>
 						<Nombre>Analisis de sangre</Nombre>
 						<Observaciones>Anemia</Observaciones>

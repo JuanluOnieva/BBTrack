@@ -37,7 +37,7 @@
 						<Codigo_ICD_10>O15</Codigo_ICD_10>
 						<Codigo_ICD_10>O03</Codigo_ICD_10>
 					</ICD_10>
-					<Prueba>
+					<Prueba Prueba="">
 						<idPrueba_externo></idPrueba_externo>
 						<Nombre></Nombre>
 						<Observaciones></Observaciones>
@@ -57,13 +57,13 @@
 						<Codigo_ICD_10>O63</Codigo_ICD_10>
 						<Codigo_ICD_10>O29</Codigo_ICD_10>
 					</ICD_10>
-					<Prueba Prueba="P-2">
+					<Prueba idPrueba="P-2">
 						<idPrueba_externo>P-17084-209HCH-180707-1</idPrueba_externo>
 						<Nombre>Analisis de orina</Nombre>
 						<Observaciones>Toco correcto</Observaciones>
 						<Tipo>Rutinaria</Tipo>
 					</Prueba>
-					<Prueba Prueba="P-4">
+					<Prueba idPrueba="P-4">
 						<idPrueba_externo>P-17084-209HCH-180707-2</idPrueba_externo>
 						<Nombre>Ecografia</Nombre>
 						<Observaciones>Toco correcto</Observaciones>
