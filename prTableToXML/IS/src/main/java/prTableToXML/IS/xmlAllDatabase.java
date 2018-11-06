@@ -14,7 +14,7 @@ public class xmlAllDatabase
     {
     	try {
         	SQLtoXML con = new SQLtoXML();
-        	con.initXML("XSLHome.xsl", "XSDHome.xsd", "bbTrack.xml");
+        	con.initXML("XSLHome.xsl", "XSDGeneral.xsd", "bbTrack.xml");
 	    	con.addAllPaciente("SELECT * FROM PACIENTE;");
 	    	con.addAllMedico("SELECT * FROM MEDICO;");
 	    	con.addAllConsulta("Select * from Consulta");

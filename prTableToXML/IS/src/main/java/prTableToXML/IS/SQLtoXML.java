@@ -610,7 +610,7 @@ public class SQLtoXML {
 			idPrueba = idPrueba==null ? "" : idPrueba;
             idHash.put("Prueba", idPrueba);
 
-    		pw.write(startLabel("Prueba", idHash, 5)); 
+    		pw.write(startLabel("idPrueba", idHash, 5)); 
     		pw.write(startEndLabel("idPrueba_externo", idPrueba_externo, 6)); 
     		pw.write(startEndLabel("Nombre", Nombre, 6));
     		pw.write(startEndLabel("Observaciones", Observaciones, 6));
