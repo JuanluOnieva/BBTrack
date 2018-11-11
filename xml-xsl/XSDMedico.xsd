@@ -1,39 +1,49 @@
-#Medico
-<xs:element name="Medico">
-		<xs:complexType>
-		<xs:sequence>
-				<xs:attribute name="Licencia" type="xs:string" use="required"/>
-  			<xs:element name="Nombre" type="xs:string" use="required"/>
-  				<xs:simpleType>
-				    <xs:restriction base="xs:string">
-					    <xs:length value="45"/>
-				    </xs:restriction>
-				 </xs:simpleType>
-	      	<xs:element name="Apellidos" type="xs:string" use="required"/>
-	      		<xs:simpleType>
-				    <xs:restriction base="xs:string">
-					    <xs:length value="45"/>
-					    <xs:whiteSpace value="preserve"/>
-				    </xs:restriction>
-				 </xs:simpleType>
-	      	<xs:element name="Sexo" type="xs:string" use="required"/>
-	      		<xs:simpleType>
-					  <xs:restriction base="xs:string">
-							<xs:pattern value="Hombre|Mujer"/>
-				      </xs:restriction>
-					  </xs:simpleType>
-	      	<xs:element name="Especialidad" type="xs:string" use="required"/>
-	      		<xs:simpleType>
-			    	<xs:restriction base="xs:string">
-			      		<xs:length value="45"/>
-			    	</xs:restriction>
-			  	 </xs:simpleType>
-			<xs:element name="Consultas">
-					<xs:complexType>
-					<xs:sequence>
-							<xs:element name="idConsulta" type="xs:string" use="required"/>
-						</xs:sequence>
-					</xs:complexType>
-		</xs:sequence>
-		</xs:complexType>
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+targetNamespace="https://www.w3schools.com"
+xmlns=""
+elementFormDefault="qualified">
+<xs:element name="bbTrack">
+  <xs:complexType>
+    <xs:sequence>
+		<xs:element name="Medico">
+				<xs:complexType>
+				<xs:sequence>
+						<xs:attribute name="Licencia" type="xs:string" use="required"/>
+		  			<xs:element name="Nombre" type="xs:string" use="required"/>
+		  				<xs:simpleType>
+						    <xs:restriction base="xs:string">
+							    <xs:length value="45"/>
+						    </xs:restriction>
+						 </xs:simpleType>
+			      	<xs:element name="Apellidos" type="xs:string" use="required"/>
+			      		<xs:simpleType>
+						    <xs:restriction base="xs:string">
+							    <xs:length value="45"/>
+							    <xs:whiteSpace value="preserve"/>
+						    </xs:restriction>
+						 </xs:simpleType>
+			      	<xs:element name="Sexo" type="xs:string" use="required"/>
+			      		<xs:simpleType>
+							  <xs:restriction base="xs:string">
+									<xs:pattern value="Hombre|Mujer"/>
+						      </xs:restriction>
+							  </xs:simpleType>
+			      	<xs:element name="Especialidad" type="xs:string" use="required"/>
+			      		<xs:simpleType>
+					    	<xs:restriction base="xs:string">
+					      		<xs:length value="45"/>
+					    	</xs:restriction>
+					  	 </xs:simpleType>
+					<xs:element name="Consultas">
+							<xs:complexType>
+							<xs:sequence>
+									<xs:element name="idConsulta" type="xs:string" use="required"/>
+								</xs:sequence>
+							</xs:complexType>
+				</xs:sequence>
+				</xs:complexType>
+		</xs:element>
+	</xs:sequence>
+  </xs:complexType>
 </xs:element>
