@@ -1,0 +1,12 @@
+Tareas:
+
+	- Con otro grupo definir mecanismo de intercambio de datos en HL7
+	- Definir un RDFSchema para toda la base de datos
+	- Definir en RDF algunos ejemplos de la BD
+
+Preguntas:
+
+	- hl7 como desarrollar el xml: siguiendo el estándar o inventando uno. Utilizar el estándar y dejar los campos que no utilicemos vacíos. solo datos del paciente
+	- RDF grafo --> unión de literales??
+	- RDF Schema --> protege??
+
