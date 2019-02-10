@@ -7,7 +7,9 @@ def bbTrackXMLjar(arg):
     old_path = os.getcwd()
     print(old_path)
     os.chdir(old_path + "/static/download")
-    os.system('rm -rf ' + arg)
+    os.system('rm -rf bbTrack')
+    os.system('rm -rf Medicos')
+    os.system('rm -rf Pacientes')
     if arg == "bbTrack":
         os.system('rm bbTrack.xml')
     os.system('rm ' + arg + '.zip')

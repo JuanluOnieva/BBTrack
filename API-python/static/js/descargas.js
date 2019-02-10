@@ -4,6 +4,8 @@ Permite descargarnos las bases de datos
 
 
 function runbbTrackXML(argument) {
+    $('#loading-image').css("visibility", "visible");
+
     $.ajax({
       type: "POST",
         url: "../computeXML/" + argument ,
@@ -17,6 +19,7 @@ function runbbTrackXML(argument) {
                 //Browser has blocked it
                 alert('Please allow popups for this website');
             }
+            $('#loading-image').css("visibility", "hidden");
 
        }
     })
@@ -24,6 +27,8 @@ function runbbTrackXML(argument) {
 }
 
 function runbbTrackRDF() {
+    $('#loading-image').css("visibility", "visible");
+
     $.ajax({
       type: "POST",
         url: "/computeRDF" ,
@@ -37,6 +42,7 @@ function runbbTrackRDF() {
                 //Browser has blocked it
                 alert('Please allow popups for this website');
             }
+            $('#loading-image').css("visibility", "hidden");
 
        }
     })

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="XSLPaciente.xsl"?>
+<bbTrack xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="XSDPaciente.xsd">
+		<Paciente idPaciente="10009">
+			<NUSS>AN-10009</NUSS>
+			<Nombre>Carmen</Nombre>
+			<Apellidos>Benitez Amancio</Apellidos>
+			<Sexo>Mujer</Sexo>
+			<Fecha_nacimiento>1998-03-04</Fecha_nacimiento>
+			<Domicilio>Malaga</Domicilio>
+			<Localidad>Malaga</Localidad>
+			<Correo_electronico>carmenBn@bbtrack.es</Correo_electronico>
+			<Telefono>769154260</Telefono>
+			<Embarazada>1</Embarazada>
+			<Historial idHistorial="H-10009">
+				<Fecha_primera_consulta>2019-04-07</Fecha_primera_consulta>
+				<Vacunas></Vacunas>
+				<Factor_de_riesgo_prenatal>
+					<Antecedentes_familiares></Antecedentes_familiares>
+					<Factores_psicosociales>47 años</Factores_psicosociales>
+					<Antecedentes_obstetricos>muerte neonatal anterior</Antecedentes_obstetricos>
+					<Antecedentes_personales></Antecedentes_personales>
+					<Patologia_materna></Patologia_materna>
+					<Riesgos_especificos></Riesgos_especificos>
+					<Exposicion_a_teratogenos>Fármacos</Exposicion_a_teratogenos>
+				</Factor_de_riesgo_prenatal>
+				<Informe Informe="H-10009-209HCH-190204">
+					<Licencia_medico>M-10938</Licencia_medico>
+					<Estado_paciente>Estable</Estado_paciente>
+					<Diagnostico>Analisis correcto</Diagnostico>
+					<idConsulta>2-09-HCH</idConsulta>
+					<Fecha_consulta>2019-02-04</Fecha_consulta>
+					<ICD_10>
+						<Codigo_ICD_10>Z52.090</Codigo_ICD_10>
+						<Codigo_ICD_10>T80.51XS</Codigo_ICD_10>
+						<Codigo_ICD_10>Z52.098</Codigo_ICD_10>
+						<Codigo_ICD_10>O04.3</Codigo_ICD_10>
+						<Codigo_ICD_10>O00.2</Codigo_ICD_10>
+						<Codigo_ICD_10>O02.3</Codigo_ICD_10>
+						<Codigo_ICD_10>J67.0</Codigo_ICD_10>
+					</ICD_10>
+					<Prueba idPrueba="12">
+						<idPrueba_externo>P-H-10009-209HCH-190204-12</idPrueba_externo>
+						<Nombre>Analisis de sangre</Nombre>
+						<Observaciones>Bien</Observaciones>
+						<Tipo>Rutinaria</Tipo>
+					</Prueba>
+					<Prueba idPrueba="13">
+						<idPrueba_externo>P-H-10009-209HCH-190204-13</idPrueba_externo>
+						<Nombre>Amniocentesis</Nombre>
+						<Observaciones>Ok</Observaciones>
+						<Tipo>Especial</Tipo>
+					</Prueba>
+				</Informe>
+				<Informe Informe="H-10009-209HCH-190207">
+					<Licencia_medico>M-10938</Licencia_medico>
+					<Estado_paciente>Grave inestable</Estado_paciente>
+					<Diagnostico>sad</Diagnostico>
+					<idConsulta>2-09-HCH</idConsulta>
+					<Fecha_consulta>2019-02-07</Fecha_consulta>
+					<ICD_10>
+					</ICD_10>
+					<Prueba idPrueba="">
+						<idPrueba_externo></idPrueba_externo>
+						<Nombre></Nombre>
+						<Observaciones></Observaciones>
+						<Tipo></Tipo>
+					</Prueba>
+				</Informe>
+				<Informe Informe="H-10009-209HCH-190407">
+					<Licencia_medico>M-33048</Licencia_medico>
+					<Estado_paciente>Estable</Estado_paciente>
+					<Diagnostico>Seguimiento embarazo de alto riesgo. Solicita prueba cariotipo</Diagnostico>
+					<idConsulta>2-09-HCH</idConsulta>
+					<Fecha_consulta>2019-04-07</Fecha_consulta>
+					<ICD_10>
+						<Codigo_ICD_10>O10.3</Codigo_ICD_10>
+						<Codigo_ICD_10>O02.3</Codigo_ICD_10>
+					</ICD_10>
+					<Prueba idPrueba="P-10">
+						<idPrueba_externo>P-10009-209HCH-190407</idPrueba_externo>
+						<Nombre>Cariotipo</Nombre>
+						<Observaciones>Todo correcto</Observaciones>
+						<Tipo>Rutinaria</Tipo>
+					</Prueba>
+				</Informe>
+			</Historial>
+		</Paciente>
+</bbTrack>
