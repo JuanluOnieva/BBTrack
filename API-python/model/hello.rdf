@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+   xmlns:ns1="http://uma.org/EDAID/bbTrack/#"
+   xmlns:ns2="http://xmlns.com/foaf/0.1/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+  <rdf:Description rdf:about="http://uma.org/EDAID/bbTrack/#H-14250">
+    <ns1:firstDate>hola</ns1:firstDate>
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Historial"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://uma.org/EDAID/bbTrack/#H-17430">
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Historial"/>
+    <ns1:firstDate>hola</ns1:firstDate>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://uma.org/EDAID/bbTrack/#11470">
+    <ns2:fecha_nacimiento rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1997-03-03</ns2:fecha_nacimiento>
+    <ns1:hasHitorial rdf:resource="http://uma.org/EDAID/bbTrack/#H-11470"/>
+    <ns2:name>Inmaculada Valera Trujillo</ns2:name>
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://uma.org/EDAID/bbTrack/#19198">
+    <ns2:name>Violeta Lara Cruz</ns2:name>
+    <ns1:hasHitorial rdf:resource="http://uma.org/EDAID/bbTrack/#H-19198"/>
+    <ns2:fecha_nacimiento rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1993-05-05</ns2:fecha_nacimiento>
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://uma.org/EDAID/bbTrack/#H-15815">
+    <ns1:firstDate>hola</ns1:firstDate>
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Historial"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://uma.org/EDAID/bbTrack/#10725">
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+    <ns1:hasHitorial rdf:resource="http://uma.org/EDAID/bbTrack/#H-10725"/>
+    <ns2:fecha_nacimiento rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1996-12-01</ns2:fecha_nacimiento>
+    <ns2:name>Leticia Lara Benitez</ns2:name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://uma.org/EDAID/bbTrack/#H-10725">
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Historial"/>
+    <ns1:firstDate>hola</ns1:firstDate>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://uma.org/EDAID/bbTrack/#18616">
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+    <ns2:name>Estrella Gonzalez Blanco</ns2:name>
+    <ns1:hasHitorial rdf:resource="http://uma.org/EDAID/bbTrack/#None"/>
+    <ns2:fecha_nacimiento rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1990-03-07</ns2:fecha_nacimiento>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://uma.org/EDAID/bbTrack/#11194">
+    <ns1:hasHitorial rdf:resource="http://uma.org/EDAID/bbTrack/#H-11194"/>
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+    <ns2:fecha_nacimiento rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1992-11-12</ns2:fecha_nacimiento>
+    <ns2:name>Leyre Trujillo Ruiz</ns2:name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://uma.org/EDAID/bbTrack/#H-17785">
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Historial"/>
+    <ns1:firstDate>hola</ns1:firstDate>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://uma.org/EDAID/bbTrack/#12288">
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+    <ns2:name>Dolores Ruiz Calzado</ns2:name>
+    <ns2:fecha_nacimiento rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1997-03-08</ns2:fecha_nacimiento>
+    <ns1:hasHitorial rdf:resource="http://uma.org/EDAID/bbTrack/#None"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://uma.org/EDAID/bbTrack/#19560">
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+    <ns1:hasHitorial rdf:resource="http://uma.org/EDAID/bbTrack/#H-19560"/>
+    <ns2:name>Sara Garcia Molero</ns2:name>
+    <ns2:fecha_nacimiento rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1991-12-12</ns2:fecha_nacimiento>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://uma.org/EDAID/bbTrack/#10169">
+    <ns1:hasHitorial rdf:resource="http://uma.org/EDAID/bbTrack/#None"/>
+    <ns2:name>Lucia Fernandez Gonzalez</ns2:name>
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+    <ns2:fecha_nacimiento rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1995-02-09</ns2:fecha_nacimiento>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://uma.org/EDAID/bbTrack/#H-11194">
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Historial"/>
+    <ns1:firstDate>hola</ns1:firstDate>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://uma.org/EDAID/bbTrack/#10009">
+    <ns2:fecha_nacimiento rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1998-03-04</ns2:fecha_nacimiento>
+    <ns2:name>Carmen Benitez Amancio</ns2:name>
+    <ns1:hasHitorial rdf:resource="http://uma.org/EDAID/bbTrack/#H-10009"/>
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://uma.org/EDAID/bbTrack/#H-17084">
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Historial"/>
+    <ns1:firstDate>hola</ns1:firstDate>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://uma.org/EDAID/bbTrack/#H-11470">
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Historial"/>
+    <ns1:firstDate>hola</ns1:firstDate>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://uma.org/EDAID/bbTrack/#None">
+    <ns1:firstDate>hola</ns1:firstDate>
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Historial"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://uma.org/EDAID/bbTrack/#14250">
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+    <ns2:fecha_nacimiento rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1989-12-05</ns2:fecha_nacimiento>
+    <ns1:hasHitorial rdf:resource="http://uma.org/EDAID/bbTrack/#H-14250"/>
+    <ns2:name>Almudena Asensio Maside</ns2:name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://uma.org/EDAID/bbTrack/#H-15854">
+    <ns1:firstDate>hola</ns1:firstDate>
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Historial"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://uma.org/EDAID/bbTrack/#15854">
+    <ns2:name>Araceli Toscano Medina</ns2:name>
+    <ns2:fecha_nacimiento rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1980-12-10</ns2:fecha_nacimiento>
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+    <ns1:hasHitorial rdf:resource="http://uma.org/EDAID/bbTrack/#H-15854"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://uma.org/EDAID/bbTrack/#17785">
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+    <ns1:hasHitorial rdf:resource="http://uma.org/EDAID/bbTrack/#H-17785"/>
+    <ns2:fecha_nacimiento rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1998-01-01</ns2:fecha_nacimiento>
+    <ns2:name>Maria Quiroga Lopez</ns2:name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://uma.org/EDAID/bbTrack/#H-19198">
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Historial"/>
+    <ns1:firstDate>hola</ns1:firstDate>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://uma.org/EDAID/bbTrack/#17084">
+    <ns2:fecha_nacimiento rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1990-02-12</ns2:fecha_nacimiento>
+    <ns2:name>Celia Del Bosque Santaella</ns2:name>
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+    <ns1:hasHitorial rdf:resource="http://uma.org/EDAID/bbTrack/#H-17084"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://uma.org/EDAID/bbTrack/#15815">
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+    <ns2:name>Maria Lopez Perez</ns2:name>
+    <ns2:fecha_nacimiento rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1997-12-20</ns2:fecha_nacimiento>
+    <ns1:hasHitorial rdf:resource="http://uma.org/EDAID/bbTrack/#H-15815"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://uma.org/EDAID/bbTrack/#hasHitorial">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:range rdf:resource="http://xmlns.com/foaf/0.1/Historial"/>
+    <rdfs:domain rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://uma.org/EDAID/bbTrack/#H-19560">
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Historial"/>
+    <ns1:firstDate>hola</ns1:firstDate>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://uma.org/EDAID/bbTrack/#17430">
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+    <ns2:fecha_nacimiento rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1997-07-24</ns2:fecha_nacimiento>
+    <ns1:hasHitorial rdf:resource="http://uma.org/EDAID/bbTrack/#H-17430"/>
+    <ns2:name>Paloma Amancio Ortega</ns2:name>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://uma.org/EDAID/bbTrack/#11529">
+    <ns2:fecha_nacimiento rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1997-03-10</ns2:fecha_nacimiento>
+    <ns2:name>Dorotea Buendia Calzado</ns2:name>
+    <ns1:hasHitorial rdf:resource="http://uma.org/EDAID/bbTrack/#None"/>
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://uma.org/EDAID/bbTrack/#H-10009">
+    <ns1:firstDate>hola</ns1:firstDate>
+    <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Historial"/>
+  </rdf:Description>
+</rdf:RDF>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="XSLMedico.xsl"?>
+<bbTrack xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="XSDMedico.xsd">
+		<Medico Licencia="M-23494">
+			<Nombre>Lucia</Nombre>
+			<Apellidos>Toscano Varela</Apellidos>
+			<Sexo>Mujer</Sexo>
+			<Especialidad>Obstetra</Especialidad>
+			<Consultas>
+				<idConsulta>2-09-HCH</idConsulta>
+			</Consultas>
+		</Medico>
+</bbTrack>

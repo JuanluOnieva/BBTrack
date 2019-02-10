@@ -1,0 +1,32 @@
+{% extends 'index.html' %}
+
+{% block title %}Buscador{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/buscador.css') }}">
+{% endblock %}
+
+{% block content %}
+
+  <div class="container-buscador">
+      <div class="row">
+            <input type="text" id="search" placeholder="Buscar.. (Ej. lung)">
+            <button type="button" class="btn" id="btn1">Buscar</button>
+      </div>
+      <!--<div class="row">-->
+        <!--<button type="button" class="btn" id="btn2">Detailss</button>-->
+      <!--</div>-->
+  </div>
+
+<div class="container">
+        <div id="results"></div>
+    <div class="row">
+        <div id="results2"></div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block js %}
+        <script src="{{ url_for('static', filename='js/icd10_buscador.js') }}"></script>
+{% endblock %}

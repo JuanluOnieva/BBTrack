@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="XSLPaciente.xsl"?>
+<bbTrack xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="XSDPaciente.xsd">
+		<Paciente idPaciente="11194">
+			<NUSS>AN-11194</NUSS>
+			<Nombre>Leyre</Nombre>
+			<Apellidos>Trujillo Ruiz</Apellidos>
+			<Sexo>Mujer</Sexo>
+			<Fecha_nacimiento>1992-11-12</Fecha_nacimiento>
+			<Domicilio>C/Union 49</Domicilio>
+			<Localidad>Malaga</Localidad>
+			<Correo_electronico>leyreTu@bbtrack.es</Correo_electronico>
+			<Telefono>691632540</Telefono>
+			<Embarazada>1</Embarazada>
+			<Historial idHistorial="H-11194">
+				<Fecha_primera_consulta>2019-02-23</Fecha_primera_consulta>
+				<Vacunas></Vacunas>
+				<Factor_de_riesgo_prenatal>
+					<Antecedentes_familiares>Diabetes</Antecedentes_familiares>
+					<Factores_psicosociales></Factores_psicosociales>
+					<Antecedentes_obstetricos>muerte neonatal anterior</Antecedentes_obstetricos>
+					<Antecedentes_personales>Obesidad. (IMC>27%)</Antecedentes_personales>
+					<Patologia_materna>Anemia</Patologia_materna>
+					<Riesgos_especificos>Estática fetal anómala pasada la semana 36</Riesgos_especificos>
+					<Exposicion_a_teratogenos></Exposicion_a_teratogenos>
+				</Factor_de_riesgo_prenatal>
+				<Informe Informe="H-11194-202HC-190123">
+					<Licencia_medico>M-23444</Licencia_medico>
+					<Estado_paciente>Grave estable</Estado_paciente>
+					<Diagnostico>Malestar estomacal debido a un virus</Diagnostico>
+					<idConsulta>2-02-HC</idConsulta>
+					<Fecha_consulta>2019-01-23</Fecha_consulta>
+					<ICD_10>
+						<Codigo_ICD_10>O06.3</Codigo_ICD_10>
+						<Codigo_ICD_10>O00.2</Codigo_ICD_10>
+						<Codigo_ICD_10>O11.1</Codigo_ICD_10>
+					</ICD_10>
+					<Prueba idPrueba="">
+						<idPrueba_externo></idPrueba_externo>
+						<Nombre></Nombre>
+						<Observaciones></Observaciones>
+						<Tipo></Tipo>
+					</Prueba>
+				</Informe>
+			</Historial>
+		</Paciente>
+</bbTrack>

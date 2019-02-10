@@ -1,0 +1,121 @@
+{% extends 'index.html' %}
+
+{% block css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+{% endblock %}
+
+{% block content %}
+
+    <ul class="nav nav-tabs">
+      <li class="nav-item" value="general">
+        <a class="nav-link active" href="/html/home">Detalles Generales</a>
+      </li>
+      <li class="nav-item" value="individual">
+        <a class="nav-link" href="/html/home/individual">ICD10 individual</a>
+      </li>
+      <li class="nav-item" value ="grupal">
+        <a class="nav-link" href="/html/home/grupal">ICD10 grupal</a>
+      </li>
+    </ul>
+
+    <div class="container">
+
+        <div id="loading-page">
+            <img id="loading-image" src="https://loading.io/spinners/fidget-spinner/lg.fidget-spinner.gif" alt="Loading..." />
+        </div>
+
+        <div class="row">
+            <div class="col col-md-8">
+                <div class="row">
+                    <div class="col">
+                        <div class="card bg-light mb-3" style="max-width: 18rem;">
+                          <div class="card-header">N&uacute;mero total de pacientes</div>
+                              <div class="card-body">
+                                  <div class="row">
+                                      <div class="col">
+                                         <h1 class="text-center">{{num_pacientes}}</h1>
+                                      </div>
+                                      <div class="col">
+                                        <img class="card-img" src="http://www.lebratelier.com/blog/wp-content/uploads/icono-grande.png" alt="Card image cap">
+                                      </div>
+                                  </div>
+                              </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card bg-light mb-3" style="max-width: 18rem;">
+                          <div class="card-header">N&uacute;mero total de embarazadas</div>
+                              <div class="card-body">
+                                  <div class="row">
+                                      <div class="col">
+                                         <h1 class="text-center">{{num_pacientes_embarazadas}}</h1>
+                                      </div>
+                                      <div class="col">
+                                        <img class="card-img" src="https://image.flaticon.com/icons/png/512/27/27925.png" alt="Card image cap">
+                                      </div>
+                                  </div>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="card bg-light mb-3" style="max-width: 18rem;">
+                          <div class="card-header">N&uacute;mero total de informes</div>
+                              <div class="card-body">
+                                  <div class="row">
+                                      <div class="col">
+                                         <h1 class="text-center">{{num_informes}}</h1>
+                                      </div>
+                                      <div class="col">
+                                        <img class="card-img" src="https://image.flaticon.com/icons/png/512/69/69087.png" alt="Card image cap">
+                                      </div>
+                                  </div>
+                              </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card bg-light mb-3" style="max-width: 18rem;">
+                          <div class="card-header">N&uacute;mero total de pruebas</div>
+                              <div class="card-body">
+                                  <div class="row">
+                                      <div class="col">
+                                         <h1 class="text-center">{{num_pruebas}}</h1>
+                                      </div>
+                                      <div class="col">
+                                        <img class="card-img" src="https://banner2.kisspng.com/20180715/lbo/kisspng-blood-test-laboratory-computer-icons-medical-test-test-icon-5b4ba88eb3b056.434861981531685006736.jpg" alt="Card image cap">
+                                      </div>
+                                  </div>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-md-4">
+                <div class="card bg-info mb-5 card-middle">
+                  <div class="card-header">Pr&oacute;ximo paciente en dar a luz</div>
+                      <div class="card-body">
+                         <h4 class="text-center" id="nextPregnant"></h4>
+                         <h5 class="text-center" id="nextPregnantFecha"></h5>
+                      </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="card bg-info card-graph" id="graph">
+                  <div class="card-header">Distribuci&oacute;n de la edad</div>
+                      <div class="card-body card-graph" id="bodyGraph">
+                          <div id="ageGraph"></div>
+                      </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block js %}
+        <script src="{{ url_for('static', filename='js/home_general.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/home.js') }}"></script>
+{% endblock %}

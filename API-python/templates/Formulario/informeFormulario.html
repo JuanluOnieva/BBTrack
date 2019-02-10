@@ -1,0 +1,66 @@
+{% extends 'index.html' %}
+
+{% block css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/informe.css') }}">
+{% endblock %}
+
+{% block content %}
+
+    <div class = "container">
+        <form>
+            <label for="inputIdMedico">Médico: </label>
+                <input type="text" id="inputIdMedico" name="inputIdMedico"/>
+
+
+            <label for="selectIdPaciente">Seleccione el identificador del paciente y pulse rellenar </label>
+            <button type="button" class="btn" id="btnRellenar">Rellenar</button>
+
+                <select id="selectIdPaciente" name="selectIdPaciente" class="form-control">
+                    <option selected="selected">None</option>
+                    {% for paciente in pacientes %}
+                    <option>{{ paciente.idPaciente }}</option>
+                    {% endfor %}
+                </select>
+
+
+            <label for="inputNombre">Nombre completo: <span class="required">*</span></label>
+            <input type="text" id="inputNombre" name="inputNombre" placeholder="Introduzca el nombre completo..." />
+
+            <label for="inputIdHistorial">Número de Historial: <span class="required">*</span></label>
+            <input type="text" id="inputIdHistorial" name="inputIdHistorial" placeholder="Ejemplo: H-10009" />
+
+            <label for="selectEstado">Estado del paciente: </label>
+                <select id="selectEstado" name="selectEstado" class="form-control">
+                        <option>Estable</option>
+                        <option>Grave estable</option>
+                        <option>Grave inestable</option>
+                </select>
+
+            <label for="textDiagnostico">Diagnóstico: <span class="required">*</span></label>
+            <input type="text" id="textDiagnostico" name="textDiagnostico" placeholder="Escriba aquí su diagnostico..." />
+
+
+            <label for="selectIdConsulta">Número de Consulta: </label>
+                <select id="selectIdConsulta" class="form-control">
+                        <option selected="selected">None</option>
+                    {% for consulta in consultas %}
+                        <option>{{ consulta }}</option>
+                    {% endfor %}
+                </select>
+            <label for="inputFechaConsulta">Fecha de Consulta: </label>
+            <input type="text" id="inputFechaConsulta" name="inputFechaConsulta"/>
+
+            <input type="submit" id="btnSubmit" value="Enviar" />
+
+        </form>
+    </div>
+
+{% endblock %}
+
+{% block js %}
+        <script src="{{ url_for('static', filename='js/informe_formulario.js') }}"></script>
+{% endblock %}
+
+
+
+

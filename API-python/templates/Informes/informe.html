@@ -1,0 +1,76 @@
+{% extends 'index.html' %}
+
+{% block css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/informe.css') }}">
+{% endblock %}
+
+{% block content %}
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">{{ informe.idInforme }}</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel">
+                <div class="panel-body">
+                        <ul class="list-group">
+                            <li class="list-group-item active informe"><b>Detalles del informe:</b> </li>
+                          <li class="list-group-item"><b>Identificador del informe:</b> {{ informe.idInforme }}</li>
+                          <li class="list-group-item"><b>Fecha de consulta:</b> {{ informe.Fecha_consulta }}</li>
+                          <li class="list-group-item"><b>Estado del paciente:</b> {{ informe.Estado_paciente }}</li>
+                          <li class="list-group-item"><b>Diagnostico:</b> {{ informe.Diagnostico }}</li>
+                          <li class="list-group-item"><b>ICD10:</b> {{ informe.ICD10s }}</li>
+                        </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br/>
+
+    <div class="accordion" id="accordionPruebas">
+      <div class="card">
+        <div class="card-header" id="headingPruebasOne">
+          <h2 class="mb-0">
+            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapsePruebas" aria-expanded="true" aria-controls="collapsePruebas">
+            Pruebas asociadas al informe
+            </button>
+          </h2>
+        </div>
+
+        <div id="collapsePruebas" class="collapse show" aria-labelledby="headingPruebasOne" data-parent="#accordionPruebas">
+          <div class="card-body">
+            <h3>Pruebas</h3>
+             <table class="table table-sm display" id="miTablaPruebas">
+                  <thead>
+                    <tr>
+                        <th scope="col">idPrueba</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Tipo</th>
+                        <th scope="col">Observaciones</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                        {% for prueba in pruebas %}
+                            <tr>
+                                <td>{{ prueba.idPrueba }}</td>
+                                <td>{{ prueba.Nombre }}</td>
+                                <td>{{ prueba.Tipo }}</td>
+                                <td>{{ prueba.Observaciones }}</td>
+                            </tr>
+                        {% endfor %}
+                  </tbody>
+             </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+{% endblock %}
+
+
+

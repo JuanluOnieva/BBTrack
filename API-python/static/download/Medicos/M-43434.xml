@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="XSLMedico.xsl"?>
+<bbTrack xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="XSDMedico.xsd">
+		<Medico Licencia="M-43434">
+			<Nombre>Enrique</Nombre>
+			<Apellidos>Barbarela Benitez</Apellidos>
+			<Sexo>Hombre</Sexo>
+			<Especialidad>Medico de familia</Especialidad>
+			<Consultas>
+				<idConsulta>2-02-HC</idConsulta>
+			</Consultas>
+		</Medico>
+</bbTrack>

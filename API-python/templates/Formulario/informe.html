@@ -1,0 +1,102 @@
+{% extends 'index.html' %}
+
+{% block css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/informe.css') }}">
+{% endblock %}
+
+{% block content %}
+
+    <div class = "container">
+        <h1>{{ informe.idInforme }} {{ informe.Apellidos }}</h1>
+        <h3>Detalles</h3>
+        <dl>
+          <dt>Estado</dt>
+          <dd>{{ informe.Estado_paciente }}</dd>
+          <dt>idHistorial</dt>
+          <dd>{{ informe.idHistorial }}</dd>
+          <dt>ICD10</dt>
+          <dd>
+            {% for codigo in informe.ICD10s %}
+                {{ codigo }}
+            {% endfor %}
+            </dd>
+            <dt>Pruebas</dt>
+            <br>
+            <dd>
+                <table class="table display" id="tablePrueba">
+                    <thead class="thead-light">
+                        <tr>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Tipo</th>
+                            <th scope="col">Observaciones</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for prueba in pruebas %}
+                            <tr>
+                                <td>{{ prueba.Nombre }}</td>
+                                <td>{{ prueba.Tipo }}</td>
+                                <td>{{ prueba.Observaciones }}</td>
+                                <td></td>
+                            </tr>
+                        {% endfor %}
+                    <tr>
+                        <td><input type="text" id="inputNombrePrueba" class="input-table"/></td>
+                        <td>
+                            <select id="selectTipoPrueba"  class="form-control" id="selectTipoPrueba">
+                                <option selected="selected">None</option>
+                                <option>Rutinaria</option>
+                                <option>Especial</option>
+                            </select>
+                        </td>
+                        <td><input type="text" id="inputObservacionesPrueba" class="input-table"/></td>
+                        <td><button type="button" class="btn" id="btnAddPrueba">Incluir</button></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </dt>
+        </dl>
+    </div>
+    <hr>
+    <div class = "container">
+        <div>
+            <h2 class="text-center">Incluir ICD10</h2>
+            <br>
+            <div class="row">
+                <div class= "col">
+                    <h5 class="text-center">Búsqueda por código</h5>
+                    <select class="selectpicker search text-center" multiple data-live-search="true" id="selectICD10">
+                        {% for ICD10 in ICD10s %}
+                            <option value={{ICD10.Codigo}} title = {{ICD10.Codigo}}>{{ ICD10.Codigo }}: {{ ICD10.Nombre }}</option>
+                        {% endfor %}
+                    </select>
+                    <button type="button" class="btn" id="btnAddICD10">Incluir</button>
+                </div>
+                <div class= "col">
+                    <h5 class="text-center">Búsqueda por término</h5>
+                    <div class="row">
+                        <input id="inputTerm" class="field-long search" placeholder="Ej lung"/>
+                        <button type="button" class="btn" id="btnSugerir">Buscar</button>
+                    </div>
+                    <div class="row">
+                            <div class="container-1" id="results">
+                            </div>
+                    </div>
+                    <div class="row">
+                         <button type="button" class="btn" id="btnAddICD10api">Incluir</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}
+
+{% block js %}
+        <script src="{{ url_for('static', filename='js/informe_add_icd10.js') }}"></script>
+{% endblock %}
+
+
+
+

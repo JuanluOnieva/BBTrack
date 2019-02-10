@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="XSLPaciente.xsl"?>
+<bbTrack xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="XSDPaciente.xsd">
+		<Paciente idPaciente="10725">
+			<NUSS>AN-10725</NUSS>
+			<Nombre>Leticia</Nombre>
+			<Apellidos>Lara Benitez</Apellidos>
+			<Sexo>Mujer</Sexo>
+			<Fecha_nacimiento>1996-12-01</Fecha_nacimiento>
+			<Domicilio>C/Tintoreria 48</Domicilio>
+			<Localidad>Malaga</Localidad>
+			<Correo_electronico>leticiaLr@bbtrack.es</Correo_electronico>
+			<Telefono>627529703</Telefono>
+			<Embarazada>1</Embarazada>
+			<Historial idHistorial="H-10725">
+				<Fecha_primera_consulta>2019-01-25</Fecha_primera_consulta>
+				<Vacunas></Vacunas>
+				<Factor_de_riesgo_prenatal>
+					<Antecedentes_familiares></Antecedentes_familiares>
+					<Factores_psicosociales>40 años</Factores_psicosociales>
+					<Antecedentes_obstetricos>Historia de infertilidad de al menos 2 años</Antecedentes_obstetricos>
+					<Antecedentes_personales>diabetes</Antecedentes_personales>
+					<Patologia_materna></Patologia_materna>
+					<Riesgos_especificos></Riesgos_especificos>
+					<Exposicion_a_teratogenos>Fármacos</Exposicion_a_teratogenos>
+				</Factor_de_riesgo_prenatal>
+				<Informe Informe="H-10725-202HC-190125">
+					<Licencia_medico>M-43434</Licencia_medico>
+					<Estado_paciente>Estable</Estado_paciente>
+					<Diagnostico>El paciente solicita prueba de esterilidad</Diagnostico>
+					<idConsulta>2-02-HC</idConsulta>
+					<Fecha_consulta>2019-01-25</Fecha_consulta>
+					<ICD_10>
+						<Codigo_ICD_10>O05.4</Codigo_ICD_10>
+						<Codigo_ICD_10>O05.4</Codigo_ICD_10>
+						<Codigo_ICD_10>O11.1</Codigo_ICD_10>
+					</ICD_10>
+					<Prueba idPrueba="P-6">
+						<idPrueba_externo>P-10725-202HC-190125</idPrueba_externo>
+						<Nombre>Ecografia transvaginal</Nombre>
+						<Observaciones>Todo correcto</Observaciones>
+						<Tipo>Especial</Tipo>
+					</Prueba>
+				</Informe>
+			</Historial>
+		</Paciente>
+</bbTrack>

@@ -1,0 +1,136 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/paciente.css') }}">
+
+
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header text-center">{{ paciente.Nombre }} {{ paciente.Apellidos }}</h1>
+        </div>
+    </div><!--/.row-->
+
+    <br>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel">
+                <div class="panel-body">
+                        <ul class="list-group">
+                          <li class="list-group-item active">Detalles de la paciente </li>
+                          <li class="list-group-item"><b>NUSS:</b> {{ paciente.NUSS }}</li>
+                          <li class="list-group-item"><b>Sexo:</b> {{ paciente.Sexo }}</li>
+                          <li class="list-group-item"><b>Fecha de nacimiento:</b> {{ paciente.Fecha_nacimiento}}</li>
+                          <li class="list-group-item"><b>Localidad:</b> {{ paciente.Localidad }}</li>
+                            <li class="list-group-item"><b>Domicilio:</b> {{ paciente.Domicilio }}</li>
+                          <li class="list-group-item"><b>Telefono:</b> {{ paciente.Telefono }}</li>
+                            <li class="list-group-item"><a href="mailto: {{ paciente.Correo_electronico }}" id="aMail"><b>Correo electrónico:</b> {{ paciente.Correo_electronico }}</a></li>
+                        </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br/>
+
+
+<div class="accordion" id="accordionExample">
+  <div class="card">
+    <div class="card-header" id="headingOne">
+      <h2 class="mb-0">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseHistorial" aria-expanded="true" aria-controls="collapseHistorial">
+        Historial del paciente
+        </button>
+      </h2>
+    </div>
+
+    <div id="collapseHistorial" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+      <div class="card-body">
+        <dl>
+            <dt>idHistorial</dt>
+            <dd>{{ historial.idHistorial }}</dd>
+            <dt>Fecha de la primera consulta</dt>
+                <dd>{{ historial.Fecha_primera_consulta }}</dd>
+            <dt>Vacunas</dt>
+            <dd>{{ historial.Vacunas }}</dd>
+        </dl>
+      </div>
+    </div>
+
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingTwo">
+      <h2 class="mb-0">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseInformes" aria-expanded="false" aria-controls="collapseInformes">
+        Informes del paciente
+        </button>
+      </h2>
+    </div>
+    <div id="collapseInformes" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+        <div class="card-body">
+          <table class="table table-sm" id="miTablaInformes">
+              <thead>
+                <tr>
+                  <th scope="col">idInforme</th>
+                  <th scope="col">Fecha de consulta</th>
+                </tr>
+              </thead>
+              <tbody>
+                    {% for informe in informes %}
+                        <tr>
+                            <td><a href="{{ url_for('render_informe', idInforme=informe.idInforme) }}"><button class="button" id="buttonInfomes"><span>{{ informe.idInforme }}</span></button></a></td>
+                            <td>{{ informe.Fecha_consulta }}</td>
+                        </tr>
+                    {% endfor %}
+              </tbody>
+          </table>
+      </div>
+    </div>
+
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingThree">
+      <h2 class="mb-0">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseGrafica" aria-expanded="false" aria-controls="collapseGrafica">
+          Gráfico ICD10
+        </button>
+      </h2>
+    </div>
+    <div id="collapseGrafica" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+      <div class="card-body">
+        <section>
+            <h2>GRAFICA ICD10</h2>
+            <div id="tester"></div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+      <div class="card">
+        <div class="card-header" id="headingDescargas">
+          <h2 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseDescargas" aria-expanded="true" aria-controls="collapseDescargas">
+            Descarga
+            </button>
+          </h2>
+        </div>
+
+        <div id="collapseDescargas" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+          <div class="card-body">
+              <div class="row">
+                  <button type="button" class="btn" id="btnDonwloadXML">XML Paciente</button>
+              </div>
+          </div>
+        </div>
+      </div>
+</div>
+
+{% endblock %}
+
+{% block js %}
+        <script src="{{ url_for('static', filename='js/paciente.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/graphs.js') }}"></script>
+
+{% endblock %}
+

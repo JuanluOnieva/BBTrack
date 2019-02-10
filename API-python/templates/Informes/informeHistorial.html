@@ -1,0 +1,21 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <h1> Informes del paciente: </h1>
+    <table class="table table-sm" id="miTablaInformes">
+		  <thead>
+		    <tr>
+		      <th scope="col">idInforme</th>
+		      <th scope="col">Fecha de consulta</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+                {% for informe in informes %}
+                    <tr>
+                        <td>{{ informe.idInforme }}</td>
+                        <td>{{ informe.Fecha_consulta }}</td>
+                    </tr>
+                {% endfor %}
+		  </tbody>
+		</table>
+{% endblock %}

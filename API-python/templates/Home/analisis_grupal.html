@@ -1,0 +1,69 @@
+{% extends 'index.html' %}
+
+{% block css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+{% endblock %}
+
+{% block content %}
+
+    <ul class="nav nav-tabs">
+      <li class="nav-item" value="general">
+        <a class="nav-link" href="/html/home">Detalles Generales</a>
+      </li>
+      <li class="nav-item" value="individual">
+        <a class="nav-link" href="/html/home/individual">ICD10 individual</a>
+      </li>
+      <li class="nav-item" value ="grupal">
+        <a class="nav-link active" href="/html/home/grupal">ICD10 grupal</a>
+      </li>
+    </ul>
+
+    <div class="container">
+        <div class="row">
+        <!--<div class="container container-fluid container-2">-->
+            <div class="col">
+                <button class="collapsible in" aria-expanded="true" >Gráfico ICD10</button>
+                <div class="content">
+                    <div name="loading">
+                            <img src="https://i.redd.it/o6m7b0l6h6pz.gif" name="spin"/>
+                    </div>
+                    <div id="icd10Graph2"></div>
+                </div>
+            </div>
+            <div class="container-sm">
+                <div class="row">
+                    <div class="col">
+                        <button class="collapsible in" aria-expanded="true" >Top 3 ICD10</button>
+                        <div class="content">
+                            <div name="loading">
+                                <img src="https://i.redd.it/o6m7b0l6h6pz.gif" name="spin"/>
+                            </div>
+                            <table class="table" id = "topICD102">
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <button class="collapsible in" aria-expanded="true" >Búsqueda ICD10</button>
+                        <div class="content-search">
+                            <div class="row">
+                                    <input type="text" id="search" placeholder="Search..">
+                                    <button type="button" class="btn" id="btn1">Buscar</button>
+                            </div>
+                            <div class="row">
+                                <table class="table" id = "searchICD10">
+                                </table>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block js %}
+        <script src="{{ url_for('static', filename='js/home_grupal.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/home.js') }}"></script>
+{% endblock %}

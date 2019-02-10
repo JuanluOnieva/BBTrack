@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="XSLPaciente.xsl"?>
+<bbTrack xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="XSDPaciente.xsd">
+		<Paciente idPaciente="14250">
+			<NUSS>AN-14250</NUSS>
+			<Nombre>Almudena</Nombre>
+			<Apellidos>Asensio Maside</Apellidos>
+			<Sexo>Mujer</Sexo>
+			<Fecha_nacimiento>1989-12-05</Fecha_nacimiento>
+			<Domicilio>C/Vicente 51</Domicilio>
+			<Localidad>Malaga</Localidad>
+			<Correo_electronico>almudenaAe@bbtrack.es</Correo_electronico>
+			<Telefono>654555531</Telefono>
+			<Embarazada>1</Embarazada>
+			<Historial idHistorial="H-14250">
+				<Fecha_primera_consulta>2019-03-19</Fecha_primera_consulta>
+				<Vacunas></Vacunas>
+				<Factor_de_riesgo_prenatal>
+					<Antecedentes_familiares></Antecedentes_familiares>
+					<Factores_psicosociales>Drogas</Factores_psicosociales>
+					<Antecedentes_obstetricos>aborto</Antecedentes_obstetricos>
+					<Antecedentes_personales>V.I.H</Antecedentes_personales>
+					<Patologia_materna></Patologia_materna>
+					<Riesgos_especificos></Riesgos_especificos>
+					<Exposicion_a_teratogenos></Exposicion_a_teratogenos>
+				</Factor_de_riesgo_prenatal>
+				<Informe Informe="H-14250-122HC-190319">
+					<Licencia_medico>M-32349</Licencia_medico>
+					<Estado_paciente>Estable</Estado_paciente>
+					<Diagnostico>Esguince de primer grado</Diagnostico>
+					<idConsulta>1-22-HC</idConsulta>
+					<Fecha_consulta>2019-03-19</Fecha_consulta>
+					<ICD_10>
+						<Codigo_ICD_10>O00.1</Codigo_ICD_10>
+					</ICD_10>
+					<Prueba idPrueba="P-8">
+						<idPrueba_externo>P-14250-122HC-190319</idPrueba_externo>
+						<Nombre>Radiografia</Nombre>
+						<Observaciones>Esguince de primer grado</Observaciones>
+						<Tipo>Especial</Tipo>
+					</Prueba>
+				</Informe>
+			</Historial>
+		</Paciente>
+</bbTrack>
