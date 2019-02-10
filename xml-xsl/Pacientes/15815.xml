@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="../XSLPaciente.xsl"?>
-<bbTrack xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../XSDPaciente.xsd">
+<?xml-stylesheet type="text/xsl" href="XSLPaciente.xsl"?>
+<bbTrack xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="XSDPaciente.xsd">
 		<Paciente idPaciente="15815">
 			<NUSS>AN-15815</NUSS>
 			<Nombre>Maria</Nombre>
@@ -13,7 +13,7 @@
 			<Telefono>724444896</Telefono>
 			<Embarazada>0</Embarazada>
 			<Historial idHistorial="H-15815">
-				<Fecha_primera_consulta>2018-05-05</Fecha_primera_consulta>
+				<Fecha_primera_consulta>2019-05-05</Fecha_primera_consulta>
 				<Vacunas></Vacunas>
 				<Factor_de_riesgo_prenatal>
 					<Antecedentes_familiares>Hipertensión arterial</Antecedentes_familiares>
@@ -24,41 +24,37 @@
 					<Riesgos_especificos>Gestacion multiple</Riesgos_especificos>
 					<Exposicion_a_teratogenos></Exposicion_a_teratogenos>
 				</Factor_de_riesgo_prenatal>
-				<Informe Informe="H-15815-202HC-180505">
+				<Informe Informe="H-15815-202HC-190505">
 					<Licencia_medico>M-43434</Licencia_medico>
 					<Estado_paciente>Estable</Estado_paciente>
 					<Diagnostico>El paciente ha intentado quedarse embarazada y no procede. Se solicita cita con especialista</Diagnostico>
 					<idConsulta>2-02-HC</idConsulta>
-					<Fecha_consulta>2018-05-05</Fecha_consulta>
-					<Es_urgente>0</Es_urgente>
-					<Sintomas></Sintomas>
+					<Fecha_consulta>2019-05-05</Fecha_consulta>
 					<ICD_10>
-						<Codigo_ICD_10>O98</Codigo_ICD_10>
-						<Codigo_ICD_10>O97</Codigo_ICD_10>
-						<Codigo_ICD_10>O45</Codigo_ICD_10>
+						<Codigo_ICD_10>O00.1</Codigo_ICD_10>
+						<Codigo_ICD_10>O11.1</Codigo_ICD_10>
+						<Codigo_ICD_10>O00.1</Codigo_ICD_10>
 					</ICD_10>
-					<Prueba Prueba="">
+					<Prueba idPrueba="">
 						<idPrueba_externo></idPrueba_externo>
 						<Nombre></Nombre>
 						<Observaciones></Observaciones>
 						<Tipo></Tipo>
 					</Prueba>
 				</Informe>
-				<Informe Informe="H-15815-202HC-181005">
+				<Informe Informe="H-15815-202HC-191005">
 					<Licencia_medico>M-23444</Licencia_medico>
 					<Estado_paciente>Estable</Estado_paciente>
 					<Diagnostico>Se solicita analisis de sangre</Diagnostico>
 					<idConsulta>2-02-HC</idConsulta>
-					<Fecha_consulta>2018-10-05</Fecha_consulta>
-					<Es_urgente>0</Es_urgente>
-					<Sintomas></Sintomas>
+					<Fecha_consulta>2019-10-05</Fecha_consulta>
 					<ICD_10>
-						<Codigo_ICD_10>O02</Codigo_ICD_10>
-						<Codigo_ICD_10>O05</Codigo_ICD_10>
-						<Codigo_ICD_10>O11</Codigo_ICD_10>
+						<Codigo_ICD_10>O00.2</Codigo_ICD_10>
+						<Codigo_ICD_10>O05.4</Codigo_ICD_10>
+						<Codigo_ICD_10>O02.3</Codigo_ICD_10>
 					</ICD_10>
 					<Prueba idPrueba="P-5">
-						<idPrueba_externo>P-15815-202HC-181005</idPrueba_externo>
+						<idPrueba_externo>P-15815-202HC-191005</idPrueba_externo>
 						<Nombre>Analisis de sangre</Nombre>
 						<Observaciones>Anemia</Observaciones>
 						<Tipo>Rutinaria</Tipo>

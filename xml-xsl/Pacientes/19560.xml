@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="../XSLPaciente.xsl"?>
-<bbTrack xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../XSDPaciente.xsd">
+<?xml-stylesheet type="text/xsl" href="XSLPaciente.xsl"?>
+<bbTrack xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="XSDPaciente.xsd">
 		<Paciente idPaciente="19560">
 			<NUSS>AN-19560</NUSS>
 			<Nombre>Sara</Nombre>
@@ -13,7 +13,7 @@
 			<Telefono>704293198</Telefono>
 			<Embarazada>1</Embarazada>
 			<Historial idHistorial="H-19560">
-				<Fecha_primera_consulta>2018-02-21</Fecha_primera_consulta>
+				<Fecha_primera_consulta>2019-02-21</Fecha_primera_consulta>
 				<Vacunas></Vacunas>
 				<Factor_de_riesgo_prenatal>
 					<Antecedentes_familiares>Hipertensión arterial</Antecedentes_familiares>
@@ -30,9 +30,7 @@
 					<Diagnostico></Diagnostico>
 					<idConsulta></idConsulta>
 					<Fecha_consulta></Fecha_consulta>
-					<Es_urgente></Es_urgente>
-					<Sintomas></Sintomas>
-					<Prueba Prueba="">
+					<Prueba idPrueba="">
 						<idPrueba_externo></idPrueba_externo>
 						<Nombre></Nombre>
 						<Observaciones></Observaciones>

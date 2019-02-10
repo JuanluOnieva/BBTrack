@@ -7,11 +7,13 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
   <html>
   <head>
     <link rel="stylesheet" href="style.css" type="text/css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"/>
+
   </head>
   <body>
   <h1>bbTrack</h1>
   <h2>Lista de pacientes</h2>
-  <table border="1">
+  <table border="1" class="table display table-hover">
     <tr bgcolor="#9acd32">
       <th>idPaciente</th>
       <th>Nombre</th>
@@ -34,7 +36,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     </xsl:for-each>
   </table>
   <h2>Lista de medicos</h2>
-  <table border="1">
+  <table border="1" class="table display table-hover">
     <tr bgcolor="#9acd32">
       <th>Licencia</th>
       <th>Nombre</th>
@@ -57,7 +59,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     </xsl:for-each>
   </table>
   <h2>Lista de enfermedades</h2>
-  <table border="1">
+  <table border="1" class="table display table-hover">
     <tr bgcolor="#9acd32">
       <th>Codigo</th>
       <th>Nombre</th>

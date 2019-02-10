@@ -6,11 +6,9 @@ elementFormDefault="qualified">
 <xs:element name="bbTrack">
   <xs:complexType>
     <xs:sequence>
-    	#Pacientes
     	<xs:element name="Pacientes">
   			<xs:complexType>
     			<xs:sequence>
-			    	#Paciente
 					<xs:element name="Paciente">
 			  			<xs:complexType>
 			    			<xs:sequence>
@@ -74,7 +72,6 @@ elementFormDefault="qualified">
 			    						</xs:restriction>
 			  						</xs:simpleType>
 			            		<xs:element name="Embarazada" type="xs:boolean" use="required"/>
-						      	#Historial
 			    				<xs:element name="Historial">
 			  						<xs:complexType>
 			    						<xs:sequence>
@@ -103,7 +100,7 @@ elementFormDefault="qualified">
 								                        <xs:element name="Exposicion_a_teratogenos" type="xs:string" use="optional"/>
 													</xs:sequence>
 			                    				</xs:complexType>
-			                				#Informe			      	
+                                            </xs:element>
 			    							<xs:element name="Informe">
 			  									<xs:complexType>
 			    									<xs:sequence>
@@ -135,8 +132,6 @@ elementFormDefault="qualified">
 			                            						</xs:restriction>
 			                          						</xs:simpleType>
 								                        <xs:element name="Fecha_consulta" type="xs:date" use="optional"/>
-								                        <xs:element name="Es_urgente" type="xs:boolean" use="required"/>
-								                        <xs:element name="Sintomas" type="xs:string" use="optional"/>
 								                            <xs:simpleType>
 								                            	<xs:restriction base="xs:string">
 								                                	<xs:length value="255"/>
@@ -149,8 +144,7 @@ elementFormDefault="qualified">
 											                        <xs:element name="Codigo_ICD_10" type="xs:string" use="required"/>
 																</xs:sequence>
 			                    							</xs:complexType>
-
-			  											#Pruebas
+			                    						</xs:element>
 			    										<xs:element name="Prueba" maxOccurs="unbounded">
 			  												<xs:complexType>
 			    												<xs:sequence>
@@ -199,11 +193,9 @@ elementFormDefault="qualified">
 				</xs:sequence>
   	  		</xs:complexType>
 		</xs:element>
-		#Medicos
 		<xs:element name="Medicos">
 			 <xs:complexType>
 			    <xs:sequence>
-					#Medico
 					<xs:element name="Medico">
 			  			<xs:complexType>
 			    			<xs:sequence>
@@ -239,13 +231,13 @@ elementFormDefault="qualified">
 			      							<xs:element name="idConsulta" type="xs:string" use="required"/>
 			      						</xs:sequence>
 			      					</xs:complexType>
+                                </xs:element>
 			    			</xs:sequence>
 			  			</xs:complexType>
 					</xs:element>
 				</xs:sequence>
 			</xs:complexType>
 		</xs:element>
-	    #ICD-10
 	    <xs:element name="ICD_10_Pregnancy">
 	      <xs:complexType>
 	        <xs:sequence>

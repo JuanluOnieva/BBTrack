@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="../XSLPaciente.xsl"?>
-<bbTrack xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../XSDPaciente.xsd">
+<?xml-stylesheet type="text/xsl" href="XSLPaciente.xsl"?>
+<bbTrack xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="XSDPaciente.xsd">
 		<Paciente idPaciente="12288">
 			<NUSS>AN-12288</NUSS>
 			<Nombre>Dolores</Nombre>
@@ -30,9 +30,7 @@
 					<Diagnostico></Diagnostico>
 					<idConsulta></idConsulta>
 					<Fecha_consulta></Fecha_consulta>
-					<Es_urgente></Es_urgente>
-					<Sintomas></Sintomas>
-					<Prueba Prueba="">
+					<Prueba idPrueba="">
 						<idPrueba_externo></idPrueba_externo>
 						<Nombre></Nombre>
 						<Observaciones></Observaciones>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="../XSLPaciente.xsl"?>
-<bbTrack xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../XSDPaciente.xsd">
+<?xml-stylesheet type="text/xsl" href="XSLPaciente.xsl"?>
+<bbTrack xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="XSDPaciente.xsd">
 		<Paciente idPaciente="17430">
 			<NUSS>AN-17430</NUSS>
 			<Nombre>Paloma</Nombre>
@@ -13,7 +13,7 @@
 			<Telefono>751849297</Telefono>
 			<Embarazada>0</Embarazada>
 			<Historial idHistorial="H-17430">
-				<Fecha_primera_consulta>2018-05-10</Fecha_primera_consulta>
+				<Fecha_primera_consulta>2019-05-10</Fecha_primera_consulta>
 				<Vacunas></Vacunas>
 				<Factor_de_riesgo_prenatal>
 					<Antecedentes_familiares>Hipertensión arterial</Antecedentes_familiares>
@@ -24,23 +24,51 @@
 					<Riesgos_especificos></Riesgos_especificos>
 					<Exposicion_a_teratogenos></Exposicion_a_teratogenos>
 				</Factor_de_riesgo_prenatal>
-				<Informe Informe="H-17430-132HCH-180510">
+				<Informe Informe="H-17430-132HCH-190510">
 					<Licencia_medico>M-99432</Licencia_medico>
 					<Estado_paciente>Estable</Estado_paciente>
 					<Diagnostico>El paciente solicita prueba de esterilidad</Diagnostico>
 					<idConsulta>1-32-HCH</idConsulta>
-					<Fecha_consulta>2018-05-10</Fecha_consulta>
-					<Es_urgente>1</Es_urgente>
-					<Sintomas></Sintomas>
+					<Fecha_consulta>2019-05-10</Fecha_consulta>
 					<ICD_10>
-						<Codigo_ICD_10>O16</Codigo_ICD_10>
-						<Codigo_ICD_10>O10</Codigo_ICD_10>
+						<Codigo_ICD_10>O05.4</Codigo_ICD_10>
+						<Codigo_ICD_10>O00.2</Codigo_ICD_10>
 					</ICD_10>
 					<Prueba idPrueba="P-11">
-						<idPrueba_externo>P-17430-132HCH-180510</idPrueba_externo>
+						<idPrueba_externo>P-17430-132HCH-190510</idPrueba_externo>
 						<Nombre>Histeroscopia</Nombre>
 						<Observaciones>Todo correcto</Observaciones>
 						<Tipo>Especial</Tipo>
+					</Prueba>
+				</Informe>
+				<Informe Informe="H-17430-209HCH-190204">
+					<Licencia_medico>M-10938</Licencia_medico>
+					<Estado_paciente>Grave estable</Estado_paciente>
+					<Diagnostico>Analisis</Diagnostico>
+					<idConsulta>2-09-HCH</idConsulta>
+					<Fecha_consulta>2019-02-04</Fecha_consulta>
+					<ICD_10>
+						<Codigo_ICD_10>D86.0</Codigo_ICD_10>
+						<Codigo_ICD_10>J67.4</Codigo_ICD_10>
+						<Codigo_ICD_10>J67.2</Codigo_ICD_10>
+						<Codigo_ICD_10>R97.1</Codigo_ICD_10>
+						<Codigo_ICD_10>D70.1</Codigo_ICD_10>
+						<Codigo_ICD_10>O00.1</Codigo_ICD_10>
+						<Codigo_ICD_10>O00.2</Codigo_ICD_10>
+						<Codigo_ICD_10>O04.3</Codigo_ICD_10>
+						<Codigo_ICD_10>O05.4</Codigo_ICD_10>
+					</ICD_10>
+					<Prueba idPrueba="15">
+						<idPrueba_externo>P-H-17430-209HCH-190204-15</idPrueba_externo>
+						<Nombre>Analisis</Nombre>
+						<Observaciones>asdf</Observaciones>
+						<Tipo>Rutinaria</Tipo>
+					</Prueba>
+					<Prueba idPrueba="16">
+						<idPrueba_externo>P-H-17430-209HCH-190204-16</idPrueba_externo>
+						<Nombre>Aminiocentesis</Nombre>
+						<Observaciones>Correcto</Observaciones>
+						<Tipo>Rutinaria</Tipo>
 					</Prueba>
 				</Informe>
 			</Historial>

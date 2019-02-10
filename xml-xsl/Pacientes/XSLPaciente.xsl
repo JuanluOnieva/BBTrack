@@ -7,10 +7,11 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
   <html>
   <head>
     <link rel="stylesheet" href="style.css" type="text/css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"/>
   </head>
   <body>
   <h2>Datos Paciente</h2>
-  <table border="1">
+  <table border="1" class="table display table-hover">
     <tr bgcolor="#9acd32">
       <th>idPaciente</th>
       <th>NUSS</th>

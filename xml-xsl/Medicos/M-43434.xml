@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="../XSLMedico.xsl"?>
-<bbTrack xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../XSDMedico.xsd">
+<?xml-stylesheet type="text/xsl" href="XSLMedico.xsl"?>
+<bbTrack xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="XSDMedico.xsd">
 		<Medico Licencia="M-43434">
 			<Nombre>Enrique</Nombre>
 			<Apellidos>Barbarela Benitez</Apellidos>
