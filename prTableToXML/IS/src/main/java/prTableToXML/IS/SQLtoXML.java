@@ -15,7 +15,7 @@ import java.util.Properties;
 
 /**
  * 
- * @author marcomunozperez
+ * @author juanluisonieva
  * TODO Add query exceptions
  */
 
@@ -24,16 +24,18 @@ public class SQLtoXML {
 	protected Connection connection;
 	FileWriter pw;
 	
-	public SQLtoXML() throws SQLException, IOException {
+	public SQLtoXML(String root, String password) throws SQLException, IOException {
+
 
 		String connectionString = "jdbc:mysql://localhost/bbTrack?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC"; 
-		
-		connection = DriverManager.getConnection(connectionString, "root", "bbtrack123");
+		connection = DriverManager.getConnection(connectionString, root, password);
+		//connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/bbTrack", root, password);
 
 	}
 	
 	public void initXML(String schema, String xsd, String file) throws IOException {
 		File fichero = new File(file);
+		
        	pw = new FileWriter(fichero, true);
        	
 		pw.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
@@ -94,14 +96,14 @@ public class SQLtoXML {
 						xmlInforme(null);
 						xmlPrueba(null);
 						xmlICD(null);
-						
 						pw.write(endLabel("Informe", 4));
 					}
+				
 					
 					for(String idInforme : all_id_Informe) {
 												
-						rsInforme = stmt.executeQuery("SELECT i.idInforme, i.Licencia_medico, i.Estado_paciente, i.Diagnostico, i.idConsulta, i.Fecha_consulta, a.Es_urgente, a.Sintomas" + 
-								" FROM asiste_a a, informe i where a.idConsulta=i.idConsulta and a.Fecha_consulta=i.Fecha_consulta and i.idInforme=\"" + idInforme + "\" ;");
+						rsInforme = stmt.executeQuery("SELECT i.idInforme, i.Licencia_medico, i.Estado_paciente, i.Diagnostico, i.idConsulta, i.Fecha_consulta" + 
+								" FROM informe i where i.idInforme=\"" + idInforme + "\" ;");
 						
 						xmlInforme(rsInforme);						
 						
@@ -163,14 +165,13 @@ public class SQLtoXML {
 						xmlInforme(null);
 						xmlICD(null);
 						xmlPrueba(null);
-						
 						pw.write(endLabel("Informe", 4));
 					}
 					
 					for(String idInforme : all_id_Informe) {
-												
-						rsInforme = stmt.executeQuery("SELECT i.idInforme, i.Licencia_medico, i.Estado_paciente, i.Diagnostico, i.idConsulta, i.Fecha_consulta, a.Es_urgente, a.Sintomas" + 
-								" FROM asiste_a a, informe i where a.idConsulta=i.idConsulta and a.Fecha_consulta=i.Fecha_consulta and i.idInforme=\"" + idInforme + "\" ;");
+						
+						rsInforme = stmt.executeQuery("SELECT i.idInforme, i.Licencia_medico, i.Estado_paciente, i.Diagnostico, i.idConsulta, i.Fecha_consulta" + 
+								" FROM informe i WHERE i.idInforme=\"" + idInforme + "\" ;");
 						xmlInforme(rsInforme);						
 						
 						ResultSet rsICD10 = stmt.executeQuery("Select Codigo from informe_icd_10 where idInforme=\"" + idInforme + "\"");
@@ -178,7 +179,6 @@ public class SQLtoXML {
 						
 						ResultSet rsPrueba = stmt.executeQuery("SELECT p.idPrueba, p.idPrueba_externo, p.Nombre, p.Observaciones, p.Tipo FROM PRUEBA p WHERE p.idInforme=\""+idInforme+"\";");
 						xmlPrueba(rsPrueba);
-						
 						 
 						pw.write(endLabel("Informe", 4));
 					}
@@ -504,22 +504,18 @@ public class SQLtoXML {
         String Diagnostico = null;
         String idConsulta = null;
 		String Fecha_consulta = null;
-		String Es_urgente = null;
-		String Sintomas = null;
 		
-		
+
 		if(result!=null) {
 			
-        	while(result.next()) {
-
+			while(result.next()) {
+			
         	idInforme = result.getString("idInforme");
         	Licencia_medico = result.getString("Licencia_medico");
         	Estado_paciente = result.getString("Estado_paciente");
         	Diagnostico = result.getString("Diagnostico");
         	idConsulta = result.getString("idConsulta");
         	Fecha_consulta = result.getString("Fecha_consulta");
-        	Es_urgente = result.getString("Es_urgente");
-        	Sintomas = result.getString("Sintomas");
         	
 
             idHash.put("Informe", idInforme);
@@ -529,10 +525,8 @@ public class SQLtoXML {
     		pw.write(startEndLabel("Diagnostico", Diagnostico, 5));
     		pw.write(startEndLabel("idConsulta", idConsulta, 5));
     		pw.write(startEndLabel("Fecha_consulta", Fecha_consulta, 5));
-    		pw.write(startEndLabel("Es_urgente", Es_urgente, 5));
-    		pw.write(startEndLabel("Sintomas", Sintomas, 5));
     		
-        	}}else {
+			}}else {
         		
         		idInforme = idInforme==null ? "" : idInforme;
                 idHash.put("Informe", idInforme);
@@ -543,8 +537,6 @@ public class SQLtoXML {
 	    		pw.write(startEndLabel("Diagnostico", Diagnostico, 5));
 	    		pw.write(startEndLabel("idConsulta", idConsulta, 5));
 	    		pw.write(startEndLabel("Fecha_consulta", Fecha_consulta, 5));
-	    		pw.write(startEndLabel("Es_urgente", Es_urgente, 5));
-	    		pw.write(startEndLabel("Sintomas", Sintomas, 5));
 
 			}
 	}
@@ -608,9 +600,9 @@ public class SQLtoXML {
 		if (!cnt){
 
 			idPrueba = idPrueba==null ? "" : idPrueba;
-            idHash.put("Prueba", idPrueba);
+            idHash.put("idPrueba", idPrueba);
 
-    		pw.write(startLabel("idPrueba", idHash, 5)); 
+    		pw.write(startLabel("Prueba", idHash, 5)); 
     		pw.write(startEndLabel("idPrueba_externo", idPrueba_externo, 6)); 
     		pw.write(startEndLabel("Nombre", Nombre, 6));
     		pw.write(startEndLabel("Observaciones", Observaciones, 6));

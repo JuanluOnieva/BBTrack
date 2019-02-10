@@ -131,8 +131,6 @@ elementFormDefault="qualified">
 			                            						</xs:restriction>
 			                          						</xs:simpleType>
 								                        <xs:element name="Fecha_consulta" type="xs:date" use="optional"/>
-								                        <xs:element name="Es_urgente" type="xs:boolean" use="required"/>
-								                        <xs:element name="Sintomas" type="xs:string" use="optional"/>
 								                            <xs:simpleType>
 								                            	<xs:restriction base="xs:string">
 								                                	<xs:length value="255"/>
